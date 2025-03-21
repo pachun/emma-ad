@@ -20,6 +20,8 @@
           BlinkMacSystemFont,
           "Inter",
           sans-serif;
+        margin: 0;
+        padding: 0;
       }
       h1 {
         color: #111827;
@@ -45,9 +47,9 @@
         font-weight: 400;
       }
       .centered-column {
-        max-width: 1000px; /* or 1440px depending on your design */
+        max-width: 1000px;
         margin: 0 auto;
-        padding-left: 1rem; /* for small screens */
+        padding-left: 1rem;
         padding-right: 1rem;
       }
       .highlighted {
@@ -69,7 +71,7 @@
     </style>
   </head>
 
-  <body style="padding: 0; margin: 0">
+  <body>
     <div class="centered-column">
       <div style="text-align: center">
         <h3 class="highlighted">emma email</h3>
@@ -79,33 +81,11 @@
         <span
           >Email's gotten out of hand. You should have a single inbox and it
           should look beautiful.</span
-        ><span>Fellow travelers missing Newton should be pleased.</span>
+        >
+        <span>Fellow travelers missing Newton should be pleased.</span>
       </h2>
-    </div>
 
-    <div style="position: relative; overflow: hidden; min-height: 500px">
-      <svg
-        style="position: absolute; bottom: 0; left: 0; z-index: 0"
-        viewBox="0 0 1440 500"
-        width="100%"
-        height="auto"
-        preserveAspectRatio="xMinYMin meet"
-      >
-        <path
-          fill="#FCEEF2"
-          d="M0,0 L1440,0 L1440,400 Q720,300 0,400 Z"
-          transform="scale(1, -1) translate(0, -500)"
-        ></path>
-      </svg>
-      <div
-        style="
-          position: relative;
-          z-index: 1;
-          padding: 2rem;
-          display: flex;
-          justify-content: center;
-        "
-      >
+      <div>
         <img
           src="emma-screenshot.png"
           alt="emma email screenshot"
