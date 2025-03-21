@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>emma email</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Inter",
+          sans-serif;
+      }
+      h1 {
+        color: #111827;
+        font-size: 3.5rem;
+        text-align: center;
+        color: #e75480;
+        font-weight: 800;
+      }
+      h2 {
+        color: #002b45;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+      h2 span {
+        display: block;
+      }
+      h3 {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 400;
+      }
+      .centered-column {
+        max-width: 1000px; /* or 1440px depending on your design */
+        margin: 0 auto;
+        padding-left: 1rem; /* for small screens */
+        padding-right: 1rem;
+      }
+      .highlighted {
+        position: relative;
+        display: inline-block;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        padding: 0.25em 0.5em;
+      }
+      .highlighted::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background: #e75480;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+
+  <body style="padding: 0; margin: 0">
+    <div class="centered-column">
+      <div style="text-align: center">
+        <h3 class="highlighted">emma email</h3>
+      </div>
+      <h1>Beautiful email, thoughtfully crafted for everyday people.</h1>
+      <h2>
+        <span
+          >Email's gotten out of hand. You should have a single inbox and it
+          should look beautiful.</span
+        ><span>Fellow travelers missing Newton should be pleased.</span>
+      </h2>
+    </div>
+
+    <div style="position: relative; overflow: hidden; min-height: 500px">
+      <svg
+        style="position: absolute; bottom: 0; left: 0; z-index: 0"
+        viewBox="0 0 1440 500"
+        width="100%"
+        height="auto"
+        preserveAspectRatio="xMinYMin meet"
+      >
+        <path
+          fill="#FCEEF2"
+          d="M0,0 L1440,0 L1440,400 Q720,500 0,400 Z"
+          transform="scale(1, -1) translate(0, -500)"
+        ></path>
+      </svg>
+      <div style="position: relative; z-index: 1; padding: 2rem">
+        <img
+          src="emma-screenshot.png"
+          alt="emma email screenshot"
+          style="max-width: 300px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
