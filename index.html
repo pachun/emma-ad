@@ -25,19 +25,24 @@
       }
       h1 {
         color: #111827;
-        font-size: 3.5rem;
+        font-size: 5.5rem;
         text-align: center;
         color: #e75480;
         font-weight: 800;
       }
-      h2 {
+      h4 {
+        color: #111827;
+        font-size: 2.5rem;
+        color: #e75480;
+        font-weight: 800;
+      }
+      p {
         color: #002b45;
         font-size: 1.5rem;
-        text-align: center;
         line-height: 1.5;
         font-weight: 400;
       }
-      h2 span {
+      p span {
         display: block;
       }
       h3 {
@@ -68,6 +73,10 @@
         background: #e75480;
         border-radius: 8px;
       }
+      a {
+        text-decoration: none;
+        border-bottom: 3px solid #fceef2;
+      }
     </style>
   </head>
 
@@ -77,20 +86,35 @@
         <h3 class="highlighted">emma email</h3>
       </div>
       <h1>Beautiful email, thoughtfully crafted for everyday people.</h1>
-      <h2>
+      <p style="text-align: center">
         <span
           >Email's gotten out of hand. You should have a single inbox and it
           should look beautiful.</span
         >
-        <span>Fellow travelers missing Newton should be pleased.</span>
-      </h2>
+        <span
+          >Fellow travelers who miss
+          <a href="https://en.wikipedia.org/wiki/Newton_(software)">Newton</a>
+          should be pleased.</span
+        >
+      </p>
 
-      <div>
+      <div style="display: flex; justify-content: center">
         <img
           src="emma-screenshot.png"
           alt="emma email screenshot"
-          style="max-width: 300px"
+          style="max-width: 300px; margin-top: 5rem; margin-bottom: 5rem"
         />
+      </div>
+
+      <div>
+        <h4>Unified Inbox</h4>
+        <p>All your accounts in one simple, elegant view.</p>
+        <h4>Minimal Distractions</h4>
+        <p>Focus on your important emails without clutter.</p>
+        <h4>Newton DNA</h4>
+        <p>Inspired by the beloved Newton experience.</p>
+        <h4>Privacy First</h4>
+        <p>Built with your security and privacy at heart.</p>
       </div>
     </div>
   </body>
