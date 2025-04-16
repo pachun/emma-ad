@@ -25,14 +25,8 @@
       }
       h1 {
         color: #111827;
-        font-size: 5.5rem;
+        font-size: 4.5rem;
         text-align: center;
-        color: #e75480;
-        font-weight: 800;
-      }
-      h4 {
-        color: #111827;
-        font-size: 2.5rem;
         color: #e75480;
         font-weight: 800;
       }
@@ -77,24 +71,85 @@
         text-decoration: none;
         border-bottom: 3px solid #fceef2;
       }
+
+      .subsections {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 0 auto 5rem;
+        padding: 0 1rem;
+        justify-content: center;
+      }
+
+      .subsection {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 300px;
+        min-width: 0;
+      }
+
+      .subsection h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.5rem;
+      }
+
+      .subsection p {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #002b45;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .site-footer {
+        background-color: #e75480;
+        padding: 3rem 1rem;
+        text-align: center;
+        color: white;
+      }
+
+      .footer-link {
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 3px solid white;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      .footer-copy {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: white;
+        font-weight: 400;
+      }
     </style>
   </head>
 
   <body>
     <div class="centered-column">
-      <div style="text-align: center">
-        <h3 class="highlighted">emma email</h3>
-      </div>
+      <a href="index.html">
+        <div style="text-align: center">
+          <h3 class="highlighted">emma email</h3>
+        </div>
+      </a>
       <h1>Beautiful email, thoughtfully crafted for everyday people.</h1>
       <p style="text-align: center">
-        <span
-          >Email's gotten out of hand. You should have a single inbox and it
-          should look beautiful.</span
+        <span style="font-size: 2rem"
+          >Email's gotten out of hand. Your inbox should make you feel
+          good.</span
         >
-        <span
-          >Fellow travelers who miss
+        <span style="font-size: 2rem"
+          >Fellow travelers missing
           <a href="https://en.wikipedia.org/wiki/Newton_(software)">Newton</a>
-          should be pleased.</span
+          will be pleased.</span
         >
       </p>
 
@@ -106,16 +161,45 @@
         />
       </div>
 
-      <div>
-        <h4>Unified Inbox</h4>
-        <p>All your accounts in one simple, elegant view.</p>
-        <h4>Minimal Distractions</h4>
-        <p>Focus on your important emails without clutter.</p>
-        <h4>Newton DNA</h4>
-        <p>Inspired by the beloved Newton experience.</p>
-        <h4>Privacy First</h4>
-        <p>Built with your security and privacy at heart.</p>
+      <div class="subsections">
+        <div class="subsection">
+          <h2>Beautiful</h2>
+          <p>
+            Inboxes are like messy closets—overwhelming and scary to open. Emma
+            organizes them with thoughtful clarity and visual calm. Go ahead and
+            leave the door open. It’s beautiful inside.
+          </p>
+        </div>
+        <div class="subsection">
+          <h2>Private</h2>
+          <p>
+            Your emails are securely sent to your phone. If you can't see a
+            loading spinner in the app, your emails only exist on the device in
+            your hand.
+          </p>
+        </div>
+        <div class="subsection">
+          <h2>Assertive</h2>
+          <p>
+            Unsubscribing should take a single tap—anything more is dishonest.
+            Emma auto-blocks senders who try and force sign-ins or preferences
+            adjustments to unsubscribe. It's your inbox.
+          </p>
+        </div>
+        <div class="subsection">
+          <h2>Thoughtful</h2>
+          <p>
+            When you're emailed a two factor authentication code, Emma forwards
+            it to you in a text message so that you can tap that "autofill from
+            text message" option. It's just easier.
+          </p>
+        </div>
       </div>
     </div>
+
+    <footer class="site-footer">
+      <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+      <p class="footer-copy">© 2025 Castle Labs</p>
+    </footer>
   </body>
 </html>
