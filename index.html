@@ -143,6 +143,19 @@
         color: white;
         font-weight: 400;
       }
+
+      img.responsive {
+        max-width: 600px;
+        border-color: #e75480;
+        border-width: 20px;
+        border-style: solid;
+      }
+
+      @media (max-width: 600px) {
+        img.responsive {
+          max-width: 480px;
+        }
+      }
     </style>
   </head>
 
@@ -255,12 +268,7 @@
             <img
               src="superhuman-fuckery.png"
               alt="superhuman fuckery"
-              style="
-                max-width: 600px;
-                border-color: #e75480;
-                border-width: 20px;
-                border-style: solid;
-              "
+              class="responsive"
             />
           </div>
           <p style="margin-top: 2rem">
