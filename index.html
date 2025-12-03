@@ -438,7 +438,7 @@
         .mobile-header {
           display: block;
           position: fixed;
-          top: 2.6rem;
+          top: 3.5rem;
           left: 0;
           right: 0;
           height: 4rem;
@@ -448,7 +448,7 @@
 
         .mobile-app-store {
           display: block;
-          top: calc(1rem + 2.6rem);
+          top: calc(1rem + 3.5rem);
         }
 
         body {
@@ -457,14 +457,14 @@
 
         main {
           padding: 1rem;
-          padding-top: calc(1rem + 2.6rem);
+          padding-top: calc(1rem + 3.5rem);
           display: block;
           position: relative;
         }
 
         .menu-toggle {
           display: flex;
-          top: calc(1rem + 2.6rem);
+          top: calc(1rem + 3.5rem);
         }
 
         nav {
@@ -475,7 +475,7 @@
           height: 100vh;
           height: 100dvh;
           background-color: #f5f3ed;
-          padding: calc(5rem + 2.6rem) 2rem 4rem 2rem;
+          padding: calc(5rem + 3.5rem) 2rem 4rem 2rem;
           overflow-y: auto;
           overflow-x: hidden;
           transform: translateX(-100%);
@@ -489,7 +489,7 @@
         }
 
         #content {
-          padding-top: calc(5rem + 2.6rem);
+          padding-top: calc(5rem + 3.5rem);
         }
 
         footer {
@@ -573,7 +573,8 @@
   </head>
   <body>
     <div class="signup-banner">
-      ⚠️ New signups temporarily unavailable while awaiting Google approval.
+      ⚠️ New signups temporarily unavailable pending a real live human response
+      from Google.
       <a href="https://discord.gg/AJE6DrsGTe">Join Discord for updates</a>
     </div>
     <div class="mobile-header"></div>
@@ -1518,10 +1519,10 @@
       function trackSectionTime() {
         if (currentSection && sectionStartTime && window.posthog) {
           const timeSpent = Date.now() - sectionStartTime;
-          posthog.capture('section_view_duration', {
+          posthog.capture("section_view_duration", {
             section: currentSection,
             duration_ms: timeSpent,
-            duration_seconds: Math.round(timeSpent / 1000)
+            duration_seconds: Math.round(timeSpent / 1000),
           });
         }
       }
@@ -1548,8 +1549,8 @@
 
           // Track section view
           if (window.posthog) {
-            posthog.capture('section_viewed', {
-              section: targetId
+            posthog.capture("section_viewed", {
+              section: targetId,
             });
           }
 
@@ -1776,7 +1777,7 @@
             const isMobile = link.closest(".mobile-app-store") !== null;
             posthog.capture("app_store_click", {
               location: isMobile ? "mobile_header" : "nav_sidebar",
-              current_section: currentSection || "welcome"
+              current_section: currentSection || "welcome",
             });
           }
         });
