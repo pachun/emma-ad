@@ -1459,12 +1459,30 @@
     </footer>
 
     <script>
+      // PostHog tracking - time spent per section
+      let currentSection = null;
+      let sectionStartTime = null;
+
+      function trackSectionTime() {
+        if (currentSection && sectionStartTime) {
+          const timeSpent = Date.now() - sectionStartTime;
+          posthog.capture('section_view_duration', {
+            section: currentSection,
+            duration_ms: timeSpent,
+            duration_seconds: Math.round(timeSpent / 1000)
+          });
+        }
+      }
+
       // Prevent browser's default hash scroll on load
       if (window.location.hash) {
         window.scrollTo(0, 0);
       }
 
       function showSection(hash) {
+        // Track time spent on previous section
+        trackSectionTime();
+
         // Hide all sections
         document.querySelectorAll(".content-section").forEach((section) => {
           section.classList.remove("active");
@@ -1475,6 +1493,15 @@
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
           targetSection.classList.add("active");
+
+          // Track section view
+          posthog.capture('section_viewed', {
+            section: targetId
+          });
+
+          // Start timing for new section
+          currentSection = targetId;
+          sectionStartTime = Date.now();
 
           // Scroll to top of page
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1681,6 +1708,11 @@
           link.setAttribute("target", "_blank");
           link.setAttribute("rel", "noopener noreferrer");
         }
+      });
+
+      // Track time spent on last section when user leaves the page
+      window.addEventListener("beforeunload", () => {
+        trackSectionTime();
       });
     </script>
     <script>
