@@ -1464,7 +1464,7 @@
       let sectionStartTime = null;
 
       function trackSectionTime() {
-        if (currentSection && sectionStartTime) {
+        if (currentSection && sectionStartTime && window.posthog) {
           const timeSpent = Date.now() - sectionStartTime;
           posthog.capture('section_view_duration', {
             section: currentSection,
@@ -1495,9 +1495,11 @@
           targetSection.classList.add("active");
 
           // Track section view
-          posthog.capture('section_viewed', {
-            section: targetId
-          });
+          if (window.posthog) {
+            posthog.capture('section_viewed', {
+              section: targetId
+            });
+          }
 
           // Start timing for new section
           currentSection = targetId;
@@ -1713,6 +1715,19 @@
       // Track time spent on last section when user leaves the page
       window.addEventListener("beforeunload", () => {
         trackSectionTime();
+      });
+
+      // Track App Store link clicks
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.posthog) {
+            const isMobile = link.closest(".mobile-app-store") !== null;
+            posthog.capture("app_store_click", {
+              location: isMobile ? "mobile_header" : "nav_sidebar",
+              current_section: currentSection || "welcome"
+            });
+          }
+        });
       });
     </script>
     <script>
