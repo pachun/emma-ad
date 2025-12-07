@@ -325,6 +325,20 @@
         opacity: 0.4;
       }
 
+      /* Update separator */
+      #updates hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #c4b8a8 20%,
+          #c4b8a8 80%,
+          transparent
+        );
+        margin: 2.5rem 0;
+      }
+
       #content ul li {
         margin-top: 0.5rem;
         display: flex;
@@ -556,6 +570,16 @@
 
         #content #privacy-policy ul li::marker {
           color: #e8a89d;
+        }
+
+        #updates hr {
+          background: linear-gradient(
+            to right,
+            transparent,
+            #4a4038 20%,
+            #4a4038 80%,
+            transparent
+          );
         }
 
         .menu-toggle {
