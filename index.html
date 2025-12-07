@@ -360,6 +360,8 @@
       }
 
       #content input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
         margin-right: 0.75rem;
         margin-top: 0.25rem;
         width: 18px;
@@ -368,6 +370,24 @@
         border: 2px solid #8b4a4a;
         border-radius: 3px;
         cursor: not-allowed;
+        background-color: transparent;
+        position: relative;
+      }
+
+      #content input[type="checkbox"]:checked {
+        background-color: #8b4a4a;
+      }
+
+      #content input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 1px;
+        width: 5px;
+        height: 9px;
+        border: solid #f5f3ed;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
       }
 
       /* Signup banner */
@@ -566,6 +586,14 @@
 
         #content input[type="checkbox"] {
           border-color: #e8a89d;
+        }
+
+        #content input[type="checkbox"]:checked {
+          background-color: #e8a89d;
+        }
+
+        #content input[type="checkbox"]:checked::after {
+          border-color: #1a1816;
         }
 
         #content #privacy-policy ul li::marker {
@@ -853,7 +881,7 @@
             your set aside pile.
           </p>
           <div class="feature-tags">
-            <span data-tag="not-started"></span>
+            <span data-tag="in-development"></span>
           </div>
         </section>
 
@@ -1159,11 +1187,11 @@
             </li>
             <li>
               <input type="checkbox" disabled />
-              <span>Set Aside</span>
+              <span>Set Aside (<a href="#updates">in progress</a>)</span>
             </li>
             <li>
-              <input type="checkbox" disabled />
-              <span>Read Receipts (<a href="#updates">in progress</a>)</span>
+              <input type="checkbox" checked disabled />
+              <span>Read Receipts</span>
             </li>
             <li>
               <input type="checkbox" disabled />
