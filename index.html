@@ -69,7 +69,6 @@
         max-width: 1000px;
         margin: 0 auto;
         padding: 3rem 1rem;
-        padding-top: calc(3rem + 3rem);
         display: grid;
         grid-template-columns: 300px 1fr;
         gap: 3rem;
@@ -390,33 +389,6 @@
         transform: rotate(45deg);
       }
 
-      /* Signup banner */
-      .signup-banner {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: #e8dcc8;
-        color: #3a3633;
-        text-align: center;
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-        z-index: 2000;
-        line-height: 1.4;
-        border-bottom: 1px solid #d4c4ac;
-      }
-
-      .signup-banner a {
-        color: #8b4a4a;
-        font-weight: 400;
-        text-decoration: underline;
-        margin-left: 0.5rem;
-      }
-
-      .signup-banner a:hover {
-        color: #a85f4a;
-      }
-
       /* Mobile header bar */
       .mobile-header {
         display: none;
@@ -465,15 +437,10 @@
 
       /* Mobile styles */
       @media (max-width: 768px) {
-        .signup-banner {
-          font-size: 0.85rem;
-          padding: 0.65rem 0.75rem;
-        }
-
         .mobile-header {
           display: block;
           position: fixed;
-          top: 3.5rem;
+          top: 0;
           left: 0;
           right: 0;
           height: 4rem;
@@ -483,7 +450,7 @@
 
         .mobile-app-store {
           display: block;
-          top: calc(1rem + 3.5rem);
+          top: 1rem;
         }
 
         body {
@@ -492,14 +459,14 @@
 
         main {
           padding: 1rem;
-          padding-top: calc(1rem + 3.5rem);
+          padding-top: 1rem;
           display: block;
           position: relative;
         }
 
         .menu-toggle {
           display: flex;
-          top: calc(1rem + 3.5rem);
+          top: 1rem;
         }
 
         nav {
@@ -510,7 +477,7 @@
           height: 100vh;
           height: 100dvh;
           background-color: #f5f3ed;
-          padding: calc(5rem + 3.5rem) 2rem 4rem 2rem;
+          padding: 5rem 2rem 4rem 2rem;
           overflow-y: auto;
           overflow-x: hidden;
           transform: translateX(-100%);
@@ -524,7 +491,7 @@
         }
 
         #content {
-          padding-top: calc(5rem + 3.5rem);
+          padding-top: 5rem;
         }
 
         footer {
@@ -533,20 +500,6 @@
       }
 
       @media (prefers-color-scheme: dark) {
-        .signup-banner {
-          background: #2a2422;
-          color: #d4c4ac;
-          border-bottom: 1px solid #3a3633;
-        }
-
-        .signup-banner a {
-          color: #e8a89d;
-        }
-
-        .signup-banner a:hover {
-          color: #f5bfb5;
-        }
-
         body {
           background-color: #1a1816;
           color: #f5f3ed;
@@ -626,10 +579,6 @@
     </style>
   </head>
   <body>
-    <div class="signup-banner">
-      ⚠️ New signups temporarily unavailable pending a response from Google.
-      <a href="https://discord.gg/AJE6DrsGTe">Join Discord for updates</a>
-    </div>
     <div class="mobile-header"></div>
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
     <a
