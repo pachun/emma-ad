@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Emma — One inbox. Preferably empty.</title>
+    <title>Emma — One inbox. Empty.</title>
     <meta
       name="description"
       content="Opinionated email for iPhones. One week free. Then $2.99/mo."
@@ -32,7 +32,6 @@
         --rule: light-dark(#e2e0da, #262524);
         --ochre: light-dark(#9a6b16, #d6a44e);
         --bar: light-dark(#b3aea2, #57544e);
-        --highlight: light-dark(rgba(255, 226, 66, 0.85), rgba(255, 213, 60, 0.92));
         --slab: light-dark(#121211, #f0ede5);
         --slab-ink: light-dark(#fdfdfc, #121211);
 
@@ -208,28 +207,6 @@
 
       .hero h1 {
         margin-top: 1.25rem;
-      }
-      .marked {
-        position: relative;
-        display: inline-block;
-        color: light-dark(#121211, #17140a);
-      }
-      .marked::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: -0.12em;
-        right: -0.18em;
-        top: -0.01em;
-        bottom: -0.07em;
-        background: var(--highlight);
-        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cfilter id='r' x='-15%25' y='-35%25' width='130%25' height='170%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05 0.13' numOctaves='3' seed='9' result='n'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='n' scale='5' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Cpath d='M3.5,37 L2,3.5 C48,1 98,3.5 148,1 C168,0.4 184,2 197,1 L195.5,36.5 C150,39.4 100,36.6 55,38.6 C35,39.4 18,37.8 3.5,37 Z' fill='%23000' filter='url(%23r)'/%3E%3C/svg%3E");
-        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cfilter id='r' x='-15%25' y='-35%25' width='130%25' height='170%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05 0.13' numOctaves='3' seed='9' result='n'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='n' scale='5' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Cpath d='M3.5,37 L2,3.5 C48,1 98,3.5 148,1 C168,0.4 184,2 197,1 L195.5,36.5 C150,39.4 100,36.6 55,38.6 C35,39.4 18,37.8 3.5,37 Z' fill='%23000' filter='url(%23r)'/%3E%3C/svg%3E");
-        -webkit-mask-size: 100% 100%;
-        mask-size: 100% 100%;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        transform: rotate(-0.6deg);
       }
       .hero .lede {
         margin-top: 1.75rem;
@@ -665,7 +642,7 @@
     <header class="masthead">
       <div class="spine masthead-inner">
         <a class="wordmark" href="#top"
-          ><img src="app-icon.png" alt="" />Emma Email</a
+          ><img src="app-icon.png" alt="" />Emma</a
         >
         <a
           class="button button-small header-cta"
@@ -679,11 +656,11 @@
       <section class="hero" id="top">
         <div>
           <p class="label">Opinionated email for iPhones</p>
-          <h1>One inbox.<br /><span class="marked">Empty.</span></h1>
+          <h1>One inbox.<br />Empty.</h1>
 
           <p class="hero-blurb">
-            Your inbox has a bottom. Fewer features and less spam will help you
-            find it.
+            Your inbox has a bottom.<br />Fewer features and less spam get you
+            there.
           </p>
           <div class="cta-row">
             <a
@@ -711,7 +688,7 @@
             <p class="price-term">One week free. Then $2.99/mo.</p>
           </div>
           <div class="price-compare">
-            <p class="label">What the others charge</p>
+            <p class="label">What others charge</p>
             <ul class="bars">
               <li class="bar-row is-emma">
                 <span class="bar-name">Emma</span>
@@ -768,7 +745,7 @@
             <p>
               You know the routine. You receive an email you never wanted,
               scroll to the bottom, tap unsubscribe and then Safari takes over
-              and shows a sign in page. After signing in, you wonder whether to
+              and shows a sign-in page. After signing in, you wonder whether to
               uncheck "marketing" or "promotional" — so you uncheck everything
               and pat yourself on the back for not forgetting to tap that save
               button. Then you see it.
@@ -776,7 +753,7 @@
             <p>
               <em>Please allow 48 hours for your changes to take effect.</em>
             </p>
-            <p>Emma's one-tap unsubscribe button works instantly.</p>
+            <p>Emma's unsubscribe works instantly.</p>
           </div>
           <div class="feature-art">
             <img
@@ -790,11 +767,10 @@
         <article class="feature reveal">
           <div class="feature-body">
             <p class="label">Read receipts</p>
-            <h3>Stay in the know.</h3>
+            <h3>Know what was read.</h3>
             <p>
-              Silence is ambiguous. Skip it. Get notified when recipients read
-              your emails so you can make informed decisions and take the next
-              step today.
+              Silence is ambiguous. Get notified when your email is read — so
+              you know whether to follow up or move on.
             </p>
           </div>
           <div class="feature-art">
@@ -808,12 +784,12 @@
 
         <article class="feature reveal">
           <div class="feature-body">
-            <p class="label">2FA codes in text messages</p>
-            <h3>2FA Codes you can use.</h3>
+            <p class="label">Texted 2FA codes</p>
+            <h3>Tap, don't type.</h3>
             <p>
               iOS lets you prefill two-factor authentication codes received via
               text message. Emailed codes have you memorizing digits in a
-              notification preview before it runs away.
+              notification preview as it runs away.
             </p>
             <p>
               Emma pulls 2FA codes out of emails and texts them to you. Tap the
@@ -832,13 +808,13 @@
         <article class="feature reveal">
           <div class="feature-body">
             <p class="label">Set aside</p>
-            <h3>Not everything is a to-do.</h3>
+            <h3>Protect your to-do list.</h3>
             <p>
-              Reservations. Plane tickets. The newsletter you'll get to on
-              Friday. None of them need doing now — but you'll want them when
-              you need them.
+              Reservations. Plane tickets. That newsletter you'll read on
+              Friday's commute home. None of them need doing but you'll want
+              them later.
             </p>
-            <p>Move them out of your inbox by setting them aside with Emma.</p>
+            <p>Set them aside — out of your inbox, not gone.</p>
           </div>
           <div class="feature-art">
             <img
@@ -854,10 +830,7 @@
     <section class="slab reveal">
       <div class="spine">
         <h2>Write your own damn emails.</h2>
-        <p>
-          You're in the wrong place for AI features.<br />You can get your AI
-          fix just about anywhere else.
-        </p>
+        <p>You can get your AI fix just about anywhere else.</p>
       </div>
     </section>
 
@@ -969,7 +942,7 @@
       </section>
 
       <footer>
-        <p>Emma Email</p>
+        <p>Emma</p>
         <nav>
           <a href="privacy-policy.html">Privacy policy</a>
           <a href="#">Updates</a>
