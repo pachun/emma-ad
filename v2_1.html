@@ -469,6 +469,30 @@
         align-items: start;
       }
 
+      .maker-head {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .maker-body {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .maker-cta {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: end;
+      }
+
+      .maker-cta .badge {
+        display: block;
+        margin-top: 1.1rem;
+      }
+
       .maker-body p {
         color: var(--ink-soft);
       }
@@ -478,7 +502,8 @@
 
       .tally {
         list-style: none;
-        margin-top: 1.6rem;
+        margin-top: auto;
+        padding-top: 1.6rem;
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
@@ -536,18 +561,6 @@
 
       /* ---------------- close ---------------- */
 
-      .close {
-        border-top: 1px solid var(--rule);
-        padding-block: clamp(4rem, 10vw, 7rem);
-        text-align: center;
-      }
-
-      .close .price-term {
-        margin-top: 1.25rem;
-      }
-      .close .cta-row {
-        justify-content: center;
-      }
       .badge {
         margin-top: 2rem;
         display: inline-block;
@@ -609,9 +622,17 @@
         }
         .price-grid,
         .feature,
-        .value,
         .maker-grid {
           grid-template-columns: minmax(0, 1fr);
+        }
+        .maker-head,
+        .maker-body,
+        .maker-cta {
+          grid-column: auto;
+          grid-row: auto;
+        }
+        .maker-cta {
+          margin-top: 2.25rem;
         }
         .feature-art {
           order: -1;
@@ -725,7 +746,7 @@
             <p>
               Email apps are addicted to adding features. AI summaries,
               calendars, chat. The good parts drown in noise. Emma subtracts the
-              noise and subtly complements what's left.
+              noise and complements what's left.
             </p>
             <p>Less isn't more. It's better.</p>
             <p>
@@ -891,9 +912,7 @@
     <div class="spine">
       <section class="maker reveal">
         <div class="maker-grid">
-          <div>
-            <h2>End the day empty.</h2>
-          </div>
+          <div class="maker-head"><h2>End the day empty.</h2></div>
           <div class="maker-body measure">
             <p>
               Emma is devoted to the closure at the bottom of your inbox. She
@@ -927,17 +946,15 @@
               </li>
             </ul>
           </div>
+          <div class="maker-cta">
+            <p class="price-term">One week free. Then $2.99/mo.</p>
+            <p class="badge">
+              <a href="https://apps.apple.com/us/app/emma-email/id6747730134"
+                ><img src="app-store.svg" alt="Download on the App Store"
+              /></a>
+            </p>
+          </div>
         </div>
-      </section>
-
-      <section class="close reveal">
-        <h2>One inbox. Empty.</h2>
-        <p class="price-term">One week free. Then $2.99/mo.</p>
-        <p class="badge">
-          <a href="https://apps.apple.com/us/app/emma-email/id6747730134"
-            ><img src="app-store.svg" alt="Download on the App Store"
-          /></a>
-        </p>
       </section>
 
       <footer>
