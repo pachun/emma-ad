@@ -194,7 +194,7 @@
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
         gap: clamp(2rem, 5vw, 4rem);
         align-items: center;
-        padding-block: clamp(2.5rem, 7vw, 6rem) clamp(3rem, 8vw, 6rem);
+        padding-block: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2.5rem);
       }
 
       .hero-blurb {
@@ -355,7 +355,7 @@
       /* ---------------- features ---------------- */
 
       .features {
-        padding-block: clamp(3rem, 8vw, 6rem);
+        padding-block: clamp(2rem, 4.5vw, 3.25rem) clamp(3rem, 8vw, 6rem);
       }
 
       .feature {
@@ -369,6 +369,10 @@
 
       .feature:first-of-type {
         padding-top: 0;
+      }
+
+      .feature:last-of-type {
+        border-bottom: 0;
       }
 
       .feature-body h3 + p {
@@ -481,6 +485,65 @@
       }
       .maker-body p + p {
         margin-top: 1.1em;
+      }
+
+      .tally {
+        list-style: none;
+        margin-top: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+      }
+
+      .tally li {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: minmax(0, 1fr) auto 7rem;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .tally-label {
+        min-width: 0;
+      }
+
+      .tally-track {
+        display: block;
+        height: 7px;
+        overflow: visible;
+      }
+
+      .tally-bar {
+        display: block;
+        height: 100%;
+        background: var(--bar);
+        border-radius: 0 4px 4px 0;
+      }
+
+      .tally-runaway .tally-bar {
+        width: 300% !important;
+        background: var(--bar);
+        border-radius: 0;
+        -webkit-mask-image: linear-gradient(
+          to right,
+          #000 18%,
+          transparent 78%
+        );
+        mask-image: linear-gradient(to right, #000 18%, transparent 78%);
+      }
+
+      .tally-value {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .tally-value sup {
+        font-size: 0.62em;
+        vertical-align: super;
+        line-height: 0;
       }
 
       .status {
@@ -681,6 +744,54 @@
     </div>
 
     <div class="spine">
+      <section class="features">
+        <article class="feature reveal">
+          <div class="feature-body">
+            <p class="label">Fewer features</p>
+            <h3>Expect less.</h3>
+            <p>
+              Email apps are addicted to adding features. AI summaries,
+              calendars, chat. The best tools drown in hip noise. Emma competes
+              by subtracting those and subtly complementing what's left.
+            </p>
+            <p>Less isn't more. It's better.</p>
+            <p>
+              <em>Less is less.</em>
+            </p>
+          </div>
+          <div class="feature-art">
+            <!-- add: <img src="feature-NAME.webp" alt="..." loading="lazy" /> -->
+          </div>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-body">
+            <p class="label">One-tap unsubscribe</p>
+            <h3>Obliterate spam.</h3>
+            <p>
+              You know the routine. You receive an email you never wanted,
+              scroll to the bottom, tap unsubscribe and then Safari takes over
+              and shows a sign-in page. After signing in, you wonder whether to
+              uncheck "marketing" or "promotional" — so you uncheck everything
+              and pat yourself on the back for not missing that save button.
+              Then you see it.
+            </p>
+            <p>
+              <em>Please allow 48 hours for your changes to take effect.</em>
+            </p>
+            <p>Emma's unsubscribe works instantly.</p>
+          </div>
+          <div class="feature-art">
+            <img
+              src="feature-unsubscribe.webp"
+              alt="A 1950s hand-cranked paper shredder with an envelope fed into it and shredded ribbons spilling out"
+              loading="lazy"
+            />
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <div class="spine">
       <section class="price reveal">
         <div class="price-grid">
           <div>
@@ -741,32 +852,6 @@
       </section>
 
       <section class="features">
-        <article class="feature reveal">
-          <div class="feature-body">
-            <p class="label">One-tap unsubscribe</p>
-            <h3>Obliterate spam.</h3>
-            <p>
-              You know the routine. You receive an email you never wanted,
-              scroll to the bottom, tap unsubscribe and then Safari takes over
-              and shows a sign-in page. After signing in, you wonder whether to
-              uncheck "marketing" or "promotional" — so you uncheck everything
-              and pat yourself on the back for not missing that save button.
-              Then you see it.
-            </p>
-            <p>
-              <em>Please allow 48 hours for your changes to take effect.</em>
-            </p>
-            <p>Emma's unsubscribe works instantly.</p>
-          </div>
-          <div class="feature-art">
-            <img
-              src="feature-unsubscribe.webp"
-              alt="A 1950s hand-cranked paper shredder with an envelope fed into it and shredded ribbons spilling out"
-              loading="lazy"
-            />
-          </div>
-        </article>
-
         <article class="feature reveal">
           <div class="feature-body">
             <p class="label">Read receipts</p>
@@ -841,36 +926,39 @@
       <section class="maker reveal">
         <div class="maker-grid">
           <div>
-            <p class="label">Why $2.99</p>
-            <h2>What's the catch?</h2>
+            <h2>End the day empty.</h2>
           </div>
           <div class="maker-body measure">
             <p>
-              There isn't one, but you're right to ask. Emma is one person — no
-              investors, no ads, no board inventing new ways to charge you.
-              Around fifty subscribers covers what it costs to run her. Anything
-              past that pays me back for the time already spent, or —
-              romantically — nudges me toward doing this full time.
+              Emma is devoted to the closure you find at the bottom of your
+              inbox. She <em>never</em> sends you email. Towards that end:
             </p>
-            <p>
-              Your mail passes through Emma's server and isn't kept. Storing it
-              would cost me time to build and money to host, and selling it
-              isn't the business — you are. The
-              <a href="privacy-policy.html">privacy policy</a> is short enough
-              to actually read.
-            </p>
-
-            <div class="status">
-              <p class="label">Where Emma is today</p>
-              <p>
-                iPhone only, Gmail only. She'll technically run on an
-                Apple-silicon Mac, but I can't honestly recommend that yet.
-                Features still to come are tracked on the
-                <a href="#">roadmap</a>, and I post progress in the
-                <a href="https://discord.gg/AJE6DrsGTe">Discord</a> as things
-                land.
-              </p>
-            </div>
+            <p>Thanks for using Emma!</p>
+            <ul class="tally">
+              <li>
+                <span class="tally-label">Welcome emails not sent</span>
+                <span class="tally-value">1,847</span>
+                <span class="tally-track"
+                  ><span class="tally-bar" style="width: 34%"></span
+                ></span>
+              </li>
+              <li>
+                <span class="tally-label">Unread badges not incremented</span>
+                <span class="tally-value">1,847</span>
+                <span class="tally-track"
+                  ><span class="tally-bar" style="width: 34%"></span
+                ></span>
+              </li>
+              <li class="tally-runaway">
+                <span class="tally-label"
+                  >Electrons not displaced from their homes</span
+                >
+                <span class="tally-value">6.02 &times; 10<sup>23</sup></span>
+                <span class="tally-track"
+                  ><span class="tally-bar" style="width: 100%"></span
+                ></span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
