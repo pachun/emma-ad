@@ -38,15 +38,128 @@
       content="#0e0e0d"
       media="(prefers-color-scheme: dark)"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="fonts/instrument-sans-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/instrument-serif-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <noscript>
       <style>
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: italic;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-italic-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: italic;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-italic-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-normal-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-normal-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: italic;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-italic-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: italic;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-italic-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-normal-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-normal-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
         .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .maker .thanks,
+        .maker .tally li {
           opacity: 1 !important;
           transform: none !important;
         }
@@ -75,6 +188,7 @@
         --gutter: clamp(1.25rem, 5vw, 3rem);
         --measure: 34rem;
         --spine: 74rem;
+        --header-h: 4.5rem;
       }
 
       *,
@@ -91,7 +205,7 @@
       }
 
       [id] {
-        scroll-margin-top: 5rem;
+        scroll-margin-top: var(--header-h);
       }
 
       body {
@@ -188,6 +302,24 @@
         padding-block: 0.9rem;
       }
 
+      .masthead-nav {
+        display: flex;
+        gap: clamp(1rem, 2.5vw, 2rem);
+        margin-inline: auto;
+        font-size: 0.9375rem;
+      }
+
+      .masthead-nav a {
+        color: var(--ink-faint);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .masthead-nav a:hover,
+      .masthead-nav a.is-current {
+        color: var(--ink);
+      }
+
       .header-cta {
         flex: none;
       }
@@ -211,6 +343,7 @@
       /* ---------------- hero ---------------- */
 
       .hero {
+        border-bottom: 1px solid var(--rule);
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
         gap: clamp(2rem, 5vw, 4rem);
@@ -288,7 +421,7 @@
       /* ---------------- price ---------------- */
 
       .price {
-        border-block: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
         padding-block: clamp(3rem, 7vw, 5rem);
       }
 
@@ -380,6 +513,10 @@
       }
 
       /* ---------------- features ---------------- */
+
+      .section-head {
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+      }
 
       .features {
         padding-block: clamp(2rem, 4.5vw, 3.25rem) clamp(3rem, 8vw, 6rem);
@@ -500,10 +637,46 @@
         margin-top: 1.1em;
       }
 
+      .maker-body .thanks {
+        margin-block: auto;
+        padding-block: 1rem 1.25rem;
+        font-family: var(--serif);
+        font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+        line-height: 1.3;
+        color: var(--ochre);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .maker .thanks,
+        .maker .tally li {
+          opacity: 0;
+          transform: translateY(10px);
+          transition:
+            opacity 0.55s ease,
+            transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+        }
+        .maker.seen .thanks,
+        .maker.seen .tally li {
+          opacity: 1;
+          transform: none;
+        }
+        .maker.seen .thanks {
+          transition-delay: 0.28s;
+        }
+        .maker.seen .tally li:nth-child(1) {
+          transition-delay: 0.58s;
+        }
+        .maker.seen .tally li:nth-child(2) {
+          transition-delay: 0.71s;
+        }
+        .maker.seen .tally li:nth-child(3) {
+          transition-delay: 0.84s;
+        }
+      }
+
       .tally {
         list-style: none;
-        margin-top: auto;
-        padding-top: 1.6rem;
+        margin-bottom: -0.45em;
         display: flex;
         flex-direction: column;
         gap: 0.7rem;
@@ -612,6 +785,12 @@
 
       /* ---------------- responsive ---------------- */
 
+      @media (max-width: 760px) {
+        .masthead-nav {
+          display: none;
+        }
+      }
+
       @media (max-width: 900px) {
         .hero {
           grid-template-columns: minmax(0, 1fr);
@@ -633,6 +812,12 @@
         }
         .maker-cta {
           margin-top: 2.25rem;
+        }
+        .maker-body .thanks {
+          margin-block: 1.2rem 0;
+        }
+        .tally {
+          margin-top: 1.6rem;
         }
         .feature-art {
           order: -1;
@@ -701,6 +886,11 @@
         <a class="wordmark" href="#top"
           ><img src="app-icon.png" alt="" />Emma</a
         >
+        <nav class="masthead-nav">
+          <a href="#price">$2.99/mo</a>
+          <a href="#features">Courtesies</a>
+          <a href="#no-ai">No AI</a>
+        </nav>
         <a
           class="button button-small header-cta"
           href="https://apps.apple.com/us/app/emma-email/id6747730134"
@@ -738,7 +928,7 @@
     </div>
 
     <div class="spine">
-      <section class="price reveal">
+      <section class="price reveal" id="price">
         <div class="price-grid">
           <div class="feature-body measure">
             <p class="label">Fewer features</p>
@@ -814,15 +1004,16 @@
     </div>
 
     <div class="spine">
-      <section class="features">
+      <section class="features" id="features">
+        <h2 class="section-head">Courtesies.</h2>
         <article class="feature reveal">
           <div class="feature-body">
             <p class="label">One-tap unsubscribe</p>
             <h2 class="feature-title">Obliterate spam.</h2>
             <p>
               You know the routine. You receive an email you never wanted,
-              scroll to the bottom, tap unsubscribe and then Safari takes over
-              and shows a sign-in page. After signing in, you wonder whether to
+              scroll to the bottom, tap unsubscribe and Safari takes over to
+              show a sign-in page. After signing in, you wonder whether to
               uncheck "marketing" or "promotional" — so you uncheck everything
               and pat yourself on the back for not missing that save button.
               Then you see it.
@@ -902,7 +1093,7 @@
       </section>
     </div>
 
-    <section class="slab reveal">
+    <section class="slab reveal" id="no-ai">
       <div class="spine">
         <h2>Write your own damn emails.</h2>
         <p>You can get your AI fix just about anywhere else.</p>
@@ -916,10 +1107,10 @@
           <div class="maker-body measure">
             <p>
               Emma is devoted to the closure at the bottom of your inbox. She
-              <em>never</em> sends you email. Before you rush off to download
-              the app, let's get your welcome email out of the way:
+              <em>never</em> sends you email. Let's get your welcome email out
+              of the way:
             </p>
-            <p>Thanks for choosing Emma.</p>
+            <p class="thanks">Thanks for choosing Emma.</p>
             <ul class="tally">
               <li>
                 <span class="tally-label">Welcome emails not sent</span>
@@ -1026,13 +1217,50 @@
             revealed.unobserve(entry.target);
           });
         },
-        { rootMargin: "0px 0px -8% 0px" },
+        { rootMargin: "0px 0px -18% 0px" },
       );
       document
         .querySelectorAll(".reveal")
         .forEach((node) => revealed.observe(node));
 
+      const watched = [...document.querySelectorAll(".masthead-nav a")]
+        .map((link) => ({
+          link,
+          section: document.querySelector(link.getAttribute("href")),
+        }))
+        .filter((entry) => entry.section);
+      const inView = new Set();
+      const litLink = () => {
+        const first = watched.find((entry) => inView.has(entry.section));
+        watched.forEach(({ link }) =>
+          link.classList.toggle(
+            "is-current",
+            Boolean(first) && link === first.link,
+          ),
+        );
+      };
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) inView.add(entry.target);
+            else inView.delete(entry.target);
+          });
+          litLink();
+        },
+        { rootMargin: "-40% 0px -45% 0px" },
+      );
+      watched.forEach(({ section }) => spy.observe(section));
+
       const masthead = document.querySelector(".masthead");
+      const syncHeaderHeight = () =>
+        document.documentElement.style.setProperty(
+          "--header-h",
+          `${masthead.getBoundingClientRect().height}px`,
+        );
+      syncHeaderHeight();
+      document.fonts.ready.then(syncHeaderHeight);
+      addEventListener("resize", syncHeaderHeight, { passive: true });
+
       const markStuck = () =>
         masthead.classList.toggle("is-stuck", window.scrollY > 8);
       addEventListener("scroll", markStuck, { passive: true });
