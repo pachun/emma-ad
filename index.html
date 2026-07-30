@@ -1,1855 +1,1264 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Emma Email</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emma — One inbox. Empty.</title>
     <meta
       name="description"
-      content="Beautiful Email, Thoughtfully Crafted for Everyday People"
+      content="Opinionated email for iPhones. One week free. Then $2.99/mo."
     />
-    <link rel="canonical" href="https://emmaemail.app" />
-    <link rel="icon" type="image/png" href="/app-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f3ed" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Emma Email" />
+    <meta property="og:title" content="Emma — One inbox. Empty." />
     <meta
       property="og:description"
-      content="Beautiful Email, Thoughtfully Crafted for Everyday People"
+      content="Opinionated email for iPhones. One week free. Then $2.99/mo."
     />
-    <meta property="og:image" content="https://emmaemail.app/app-icon.png" />
-    <meta property="og:url" content="https://emmaemail.app" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Emma Email" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Emma Email" />
+    <meta property="og:url" content="https://emmaemail.app/" />
+    <meta property="og:image" content="https://emmaemail.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
-      name="twitter:description"
-      content="Beautiful Email, Thoughtfully Crafted for Everyday People"
+      property="og:image:alt"
+      content="Emma Email — One inbox. Empty. One week free, then $2.99 a month."
     />
-    <meta name="twitter:image" content="https://emmaemail.app/app-icon.png" />
-
-    <!-- Apple Mobile Web App -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Emma Email" />
-    <link rel="apple-touch-icon" href="/app-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="twitter:image" content="https://emmaemail.app/og-image.jpg" />
+    <link rel="canonical" href="https://emmaemail.app/" />
+    <link rel="icon" href="app-icon.png" />
+    <link rel="apple-touch-icon" href="app-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fdfdfc"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0e0e0d"
+      media="(prefers-color-scheme: dark)"
+    />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="fonts/instrument-sans-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    <link
+      rel="preload"
+      href="fonts/instrument-serif-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <noscript>
+      <style>
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: italic;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-italic-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: italic;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-italic-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-normal-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Sans";
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url("fonts/instrument-sans-normal-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: italic;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-italic-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: italic;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-italic-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-normal-latin-ext.woff2")
+            format("woff2");
+          unicode-range:
+            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+          font-family: "Instrument Serif";
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("fonts/instrument-serif-normal-latin.woff2") format("woff2");
+          unicode-range:
+            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .maker .thanks,
+        .maker .tally li {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
     <style>
-      * {
+      :root {
+        color-scheme: light dark;
+
+        --paper: light-dark(#fdfdfc, #0e0e0d);
+        --paper-sunk: light-dark(#f4f3f0, #171716);
+        --ink: light-dark(#121211, #eeebe3);
+        --ink-soft: light-dark(#5f5d57, #a3a099);
+        --ink-faint: light-dark(#8a8880, #6e6c66);
+        --rule: light-dark(#e2e0da, #262524);
+        --ochre: light-dark(#9a6b16, #d6a44e);
+        --bar: light-dark(#b3aea2, #57544e);
+        --slab: light-dark(#121211, #f0ede5);
+        --slab-ink: light-dark(#fdfdfc, #121211);
+
+        --sans:
+          "Instrument Sans", ui-sans-serif, system-ui, -apple-system,
+          "Helvetica Neue", sans-serif;
+        --serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+        --gutter: clamp(1.25rem, 5vw, 3rem);
+        --measure: 34rem;
+        --spine: 74rem;
+        --header-h: 4.5rem;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --content-font-size: inherit;
-      }
-
-      body {
-        font-family: Merriweather, serif;
-        background-color: #f5f3ed;
-        color: #3a3633;
-        font-size: 1.125rem;
       }
 
       html {
-        scrollbar-gutter: stable;
+        overflow-x: clip;
+        scroll-behavior: smooth;
       }
 
-      main {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 3rem 1rem;
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 3rem;
+      [id] {
+        scroll-margin-top: var(--header-h);
       }
 
-      #privacy-policy h3 {
-        margin-top: 2rem;
+      body {
+        overflow-x: clip;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
 
-      #content #privacy-policy ul {
-        list-style: disc;
-        padding-left: 2rem;
-        margin-top: 1rem;
+      a {
+        color: inherit;
+        text-decoration-color: var(--ochre);
+        text-underline-offset: 0.2em;
+      }
+      a:hover {
+        color: var(--ochre);
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      :focus-visible {
+        outline: 2px solid var(--ochre);
+        outline-offset: 3px;
+        border-radius: 2px;
       }
 
-      #content #privacy-policy ul li {
-        display: list-item !important;
-        align-items: unset;
-        margin-top: 0.5rem;
+      .spine {
+        max-width: var(--spine);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+      .measure {
+        max-width: var(--measure);
       }
 
-      #content #privacy-policy ul li::marker {
-        color: #8b4a4a;
-      }
-
-      nav {
-        h1 {
-          cursor: pointer;
-        }
-
-        h2 {
-          margin-top: 2rem;
-        }
-
-        h3 {
-          width: fit-content;
-          margin-top: 0.6rem;
-        }
-
-        h3 a {
-          color: #8b4a4a;
-          text-decoration: none;
-          cursor: pointer;
-        }
-
-        h3 a:hover {
-          color: #a85f4a;
-        }
-
-        h3 a:visited {
-          color: #8b4a4a;
-        }
-
-        h3 a:visited:hover {
-          color: #a85f4a;
-        }
-      }
-
-      /* Content links */
-      #content a {
-        color: #8b4a4a;
-      }
-
-      #content a:hover {
-        color: #a85f4a;
-      }
-
-      #content a:visited {
-        color: #8b4a4a;
-      }
-
-      #content a:visited:hover {
-        color: #a85f4a;
+      .label {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
       }
 
       h1,
-      h2,
-      h3 {
-        font-family: Merriweather, serif;
+      h2 {
+        font-weight: 600;
+        letter-spacing: -0.028em;
+        line-height: 1.03;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(2.75rem, 7.2vw, 5.25rem);
+      }
+      h2 {
+        font-size: clamp(2rem, 4.6vw, 3.25rem);
+      }
+      .feature-title {
+        font-size: clamp(1.5rem, 2.6vw, 2rem);
+        line-height: 1.1;
       }
 
-      p {
-        margin-top: 1rem;
+      p + p {
+        margin-top: 1.1em;
       }
 
-      p:first-child {
-        margin-top: 0;
+      /* ---------------- masthead ---------------- */
+
+      .masthead {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: color-mix(in srgb, var(--paper) 84%, transparent);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
       }
 
-      #content > *:first-child {
-        margin-top: 0;
+      .masthead.is-stuck {
+        border-bottom-color: var(--rule);
       }
 
-      #content p {
-        margin-top: 1rem;
-        font-size: var(--content-font-size);
-        line-height: 1.7;
-      }
-
-      .content-section {
-        display: none;
-      }
-
-      .content-section.active {
-        display: block;
-      }
-
-      .section-nav {
+      .masthead-inner {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        margin-top: 3rem;
+        gap: 1rem;
+        padding-block: 0.9rem;
       }
 
-      .section-nav a {
-        text-decoration: none;
-        font-size: 0.9rem;
-      }
-
-      .section-nav .nav-next {
-        margin-left: auto;
-        text-align: right;
-      }
-
-      /* Feature tags */
-      .feature-tags {
+      .masthead-nav {
         display: flex;
+        gap: clamp(1rem, 2.5vw, 2rem);
+        margin-inline: auto;
+        font-size: 0.9375rem;
+      }
+
+      .masthead-nav a {
+        color: var(--ink-faint);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .masthead-nav a:hover,
+      .masthead-nav a.is-current {
+        color: var(--ink);
+      }
+
+      .header-cta {
+        flex: none;
+      }
+
+      .wordmark {
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
         gap: 0.5rem;
+      }
+
+      .wordmark img {
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+      }
+
+      /* ---------------- hero ---------------- */
+
+      .hero {
+        border-bottom: 1px solid var(--rule);
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+        padding-block: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2.5rem);
+      }
+
+      .hero-blurb {
         margin-top: 1.5rem;
+        max-width: 26rem;
+        font-size: 1.1875rem;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      .hero h1 {
+        margin-top: 1.25rem;
+      }
+      .hero .lede {
+        margin-top: 1.75rem;
+        max-width: 30rem;
+      }
+
+      .hero-emma {
+        justify-self: center;
+        width: min(100%, 25rem);
+      }
+
+      .hero-emma img {
+        width: 100%;
+        mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+      }
+
+      .cta-row {
+        margin-top: 2.25rem;
+        display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        gap: 0.9rem 1.25rem;
       }
 
-      .feature-tag {
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--ink);
+        color: var(--paper);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        text-decoration: none;
+        padding: 0.85rem 1.4rem;
+        border-radius: 100px;
+        transition:
+          transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1),
+          opacity 0.2s;
+      }
+
+      .button:hover {
+        color: var(--paper);
+        opacity: 0.86;
+        transform: translateY(-1px);
+      }
+
+      .button-small {
+        font-size: 0.9375rem;
+        padding: 0.55rem 1.1rem;
+      }
+
+      .cta-note {
+        font-size: 0.9375rem;
+        color: var(--ink-soft);
+      }
+
+      /* ---------------- price ---------------- */
+
+      .price {
+        border-bottom: 1px solid var(--rule);
+        padding-block: clamp(3rem, 7vw, 5rem);
+      }
+
+      .price-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+        gap: clamp(1.5rem, 5vw, 4rem);
+        align-items: start;
+      }
+
+      .price-figure {
+        font-size: clamp(3.25rem, 8vw, 5.5rem);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 0.95;
+      }
+
+      .price-figure span {
+        color: var(--ochre);
+      }
+
+      .price-term {
+        margin-top: 0.75rem;
+        color: var(--ink-soft);
+      }
+
+      .price-stack {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.75rem, 4vw, 2.75rem);
+      }
+
+      .price-compare {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+
+      .bars {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 6.5rem minmax(0, 1fr) 3.5rem;
+        align-items: center;
+        gap: 0.9rem;
+        font-size: 0.9375rem;
+      }
+
+      .bar-name {
+        color: var(--ink-soft);
+      }
+
+      .bar-track {
+        display: block;
+        height: 10px;
+      }
+
+      .bar-fill {
+        display: block;
+        height: 100%;
+        background: var(--bar);
+        border-radius: 0 5px 5px 0;
+      }
+
+      .bar-value {
+        color: var(--ink-soft);
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .bar-row.is-emma .bar-name,
+      .bar-row.is-emma .bar-value {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .bar-row.is-emma .bar-fill {
+        background: var(--ochre);
+      }
+
+      .bar-note {
+        font-size: 0.8125rem;
+        color: var(--ink-faint);
+      }
+
+      /* ---------------- features ---------------- */
+
+      .section-head {
+        color: var(--ink);
+        margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+      }
+
+      .features {
+        padding-block: clamp(2rem, 4.5vw, 3.25rem) clamp(3rem, 8vw, 6rem);
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(1.5rem, 5vw, 4.5rem);
+        align-items: center;
+        padding-block: clamp(3.25rem, 7vw, 5.5rem);
+      }
+
+      .feature:first-of-type {
+        padding-top: 0;
+      }
+
+      .feature-body h2 + p {
+        margin-top: 1.1rem;
+      }
+      .feature-body p {
+        color: var(--ink-soft);
+      }
+      .feature-body .label {
+        margin-bottom: 0.9rem;
+      }
+      .feature-body em {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.1em;
+        color: var(--ink);
+      }
+      .feature-art {
+        aspect-ratio: 4 / 3;
+        display: grid;
+        place-items: center;
+      }
+      .feature-art img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* ---------------- the slab ---------------- */
+
+      .slab {
+        background: var(--slab);
+        color: var(--slab-ink);
+        padding-block: clamp(5rem, 14vw, 9rem);
+        text-align: center;
+      }
+
+      .slab h2 {
+        font-size: clamp(2.5rem, 8.5vw, 6.5rem);
+        letter-spacing: -0.035em;
+        max-width: 16ch;
+        margin-inline: auto;
+      }
+
+      .slab p {
+        margin-top: 2rem;
+        color: var(--slab-ink);
+        opacity: 0.62;
+        max-width: 44ch;
+        margin-inline: auto;
+        font-size: 1rem;
+      }
+
+      /* ---------------- values ---------------- */
+
+      /* ---------------- maker + status ---------------- */
+
+      .maker {
+        border-top: 1px solid var(--rule);
+        padding-block: clamp(3.5rem, 8vw, 6rem);
+      }
+
+      .maker-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+        gap: clamp(1.5rem, 5vw, 4rem);
+        align-items: start;
+      }
+
+      .maker-head {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .maker-body {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .maker-cta {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: end;
+      }
+
+      .maker-cta .badge {
+        display: block;
+        margin-top: 1.1rem;
+      }
+
+      .maker-body p {
+        color: var(--ink-soft);
+      }
+      .maker-body p + p {
+        margin-top: 1.1em;
+      }
+
+      .maker-body .thanks {
+        margin-block: auto;
+        padding-block: 1rem 1.25rem;
+        font-family: var(--serif);
+        font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+        line-height: 1.3;
+        color: var(--ochre);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .maker .thanks,
+        .maker .tally li {
+          opacity: 0;
+          transform: translateY(10px);
+          transition:
+            opacity 0.55s ease,
+            transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
+        }
+        .maker.seen .thanks,
+        .maker.seen .tally li {
+          opacity: 1;
+          transform: none;
+        }
+        .maker.seen .thanks {
+          transition-delay: 0.28s;
+        }
+        .maker.seen .tally li:nth-child(1) {
+          transition-delay: 0.58s;
+        }
+        .maker.seen .tally li:nth-child(2) {
+          transition-delay: 0.71s;
+        }
+        .maker.seen .tally li:nth-child(3) {
+          transition-delay: 0.84s;
+        }
+      }
+
+      .tally {
+        list-style: none;
+        margin-bottom: -0.45em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+      }
+
+      .tally li {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto 7rem;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .tally-label {
+        min-width: 0;
+      }
+
+      .tally-track {
+        display: block;
+        height: 7px;
+        overflow: visible;
+      }
+
+      .tally-bar {
+        display: block;
+        height: 100%;
+        background: var(--bar);
+        border-radius: 0 4px 4px 0;
+      }
+
+      .tally-runaway .tally-bar {
+        width: 100vw !important;
+        background: var(--bar);
+        border-radius: 0;
+        -webkit-mask-image: linear-gradient(
+          to right,
+          #000 0 60%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(to right, #000 0 60%, transparent 100%);
+      }
+
+      .tally-value {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .tally-value sup {
+        font-size: 0.62em;
+        vertical-align: super;
+        line-height: 0;
+      }
+
+      /* ---------------- close ---------------- */
+
+      .badge {
+        margin-top: 2rem;
         display: inline-block;
-        background: #e8d5c4;
-        color: #3a3633;
-        padding: 0.25rem 0.75rem;
-        border-radius: 1rem;
-        font-size: 0.85rem;
-        cursor: help;
-        position: relative;
-        user-select: none;
       }
-
-      .feature-tag.in-development {
-        background: #d4e5f7;
-        color: #2c4a6b;
-      }
-
-      .feature-tag.not-started {
-        background: #f5e6d3;
-        color: #6b4a2c;
-      }
-
-      .feature-tag .tooltip {
-        visibility: hidden;
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-bottom: 0.5rem;
-        background: #3a3633;
-        color: #f5f3ed;
-        padding: 0.75rem;
-        border-radius: 0.5rem;
-        font-size: 0.85rem;
-        width: 250px;
-        text-align: left;
-        z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        line-height: 1.4;
-      }
-
-      .feature-tag .tooltip::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 6px solid transparent;
-        border-top-color: #3a3633;
-      }
-
-      .feature-tag:hover .tooltip {
-        visibility: visible;
-      }
-
-      .feature-tag.tooltip-active .tooltip {
-        visibility: visible;
-      }
-
-      .feature-tag .tooltip a {
-        color: #f5c4b8;
-        text-decoration: underline;
+      .badge img {
+        width: 150px;
       }
 
       @media (prefers-color-scheme: dark) {
-        .feature-tag {
-          background: #4a3a2a;
-          color: #f5f3ed;
+        :root:not([data-theme="light"]) .badge img {
+          filter: invert(1);
         }
+      }
 
-        .feature-tag.in-development {
-          background: #2a3a4a;
-          color: #d4e5f7;
-        }
-
-        .feature-tag.not-started {
-          background: #4a3a2a;
-          color: #f5e6d3;
-        }
-
-        .feature-tag .tooltip {
-          background: #f5f3ed;
-          color: #3a3633;
-        }
-
-        .feature-tag .tooltip::after {
-          border-top-color: #f5f3ed;
-        }
-
-        .feature-tag .tooltip a {
-          color: #8b4a4a;
-        }
+      :root[data-theme="dark"] .badge img {
+        filter: invert(1);
       }
 
       footer {
-        text-align: center;
-        padding: 3rem 1rem;
-        font-size: 0.9rem;
-      }
-
-      footer a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-
-      footer a:visited {
-        color: inherit;
-      }
-
-      footer span {
-        margin: 0 0.75rem;
-        opacity: 0.5;
-      }
-
-      footer .copyright {
-        margin-top: 1.5rem;
-        font-size: 0.75rem;
-        opacity: 0.4;
-      }
-
-      /* Update separator */
-      #updates hr {
-        border: none;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          #c4b8a8 20%,
-          #c4b8a8 80%,
-          transparent
-        );
-        margin: 2.5rem 0;
-      }
-
-      #content ul li {
-        margin-top: 0.5rem;
+        border-top: 1px solid var(--rule);
+        padding-block: 2rem 3rem;
         display: flex;
-        align-items: flex-start;
-      }
-
-      #content ul li:has(> ul) {
         flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        justify-content: space-between;
+        font-size: 0.875rem;
+        color: var(--ink-faint);
       }
 
-      #content ul ul {
-        padding-left: 1.5rem;
-        width: 100%;
-        flex-basis: 100%;
+      footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
       }
 
-      #content ul ul li {
-        margin-top: 0.5rem;
+      /* ---------------- reveal ---------------- */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .reveal.seen {
+        opacity: 1;
+        transform: none;
       }
 
-      #content input[type="checkbox"] {
-        -webkit-appearance: none;
-        appearance: none;
-        margin-right: 0.75rem;
-        margin-top: 0.25rem;
-        width: 18px;
-        height: 18px;
-        min-width: 18px;
-        border: 2px solid #8b4a4a;
-        border-radius: 3px;
-        cursor: not-allowed;
-        background-color: transparent;
-        position: relative;
+      /* ---------------- responsive ---------------- */
+
+      @media (max-width: 760px) {
+        .masthead-nav {
+          display: none;
+        }
       }
 
-      #content input[type="checkbox"]:checked {
-        background-color: #8b4a4a;
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .hero-emma {
+          order: -1;
+          width: min(100%, 17rem);
+        }
+        .price-grid,
+        .feature,
+        .maker-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .maker-head,
+        .maker-body,
+        .maker-cta {
+          grid-column: auto;
+          grid-row: auto;
+        }
+        .maker-cta {
+          margin-top: 2.25rem;
+        }
+        .maker-body .thanks {
+          margin-block: 1.2rem 0;
+        }
+        .tally {
+          margin-top: 1.6rem;
+        }
+        .feature-art {
+          order: -1;
+          aspect-ratio: 16 / 10;
+        }
       }
 
-      #content input[type="checkbox"]:checked::after {
-        content: "";
-        position: absolute;
-        left: 4px;
-        top: 1px;
-        width: 5px;
-        height: 9px;
-        border: solid #f5f3ed;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
+          animation: none !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
       }
 
-      /* Mobile header bar */
-      .mobile-header {
-        display: none;
-      }
-
-      /* App Store link for mobile */
-      .mobile-app-store {
-        display: none;
+      /* ===== DEV PREVIEW — delete this block and the one marked DEV PREVIEW below before launch ===== */
+      #theme-preview {
         position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 1001;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        z-index: 99;
+        display: flex;
+        gap: 1px;
+        padding: 2px;
+        border-radius: 100px;
+        background: var(--paper-sunk);
+        border: 1px solid var(--rule);
+        opacity: 0.1;
+        transition: opacity 0.25s;
       }
-
-      .mobile-app-store img {
-        height: 40px;
-        display: block;
+      #theme-preview:hover,
+      #theme-preview:focus-within {
+        opacity: 1;
       }
-
-      /* Hamburger menu button */
-      .menu-toggle {
-        display: none;
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 1001;
-        background: #f5f3ed;
-        border: none;
-        border-radius: 4px;
+      #theme-preview button {
+        font: inherit;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        background: none;
+        border: 0;
+        border-radius: 100px;
+        padding: 0.3rem 0.7rem;
         cursor: pointer;
-        padding: 0.4rem 0.75rem 0.6rem 0.75rem;
-        font-size: 1.5rem;
-        color: #3a3633;
-        line-height: 1;
-        align-items: center;
-        justify-content: center;
       }
-
-      .menu-toggle.showing-close {
-        padding: 0.5rem 0.75rem;
+      #theme-preview button[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--paper);
       }
-
-      body.menu-open {
-        overflow: hidden;
-      }
-
-      /* Mobile styles */
-      @media (max-width: 768px) {
-        .mobile-header {
-          display: block;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4rem;
-          background-color: #f5f3ed;
-          z-index: 1000;
-        }
-
-        .mobile-app-store {
-          display: block;
-          top: 1rem;
-        }
-
-        body {
-          font-size: 1rem;
-        }
-
-        main {
-          padding: 1rem;
-          padding-top: 1rem;
-          display: block;
-          position: relative;
-        }
-
-        .menu-toggle {
-          display: flex;
-          top: 1rem;
-        }
-
-        nav {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100vh;
-          height: 100dvh;
-          background-color: #f5f3ed;
-          padding: 5rem 2rem 4rem 2rem;
-          overflow-y: auto;
-          overflow-x: hidden;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-          z-index: 999;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        nav.nav-open {
-          transform: translateX(0);
-        }
-
-        #content {
-          padding-top: 5rem;
-        }
-
-        footer {
-          padding: 2rem 1rem;
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #1a1816;
-          color: #f5f3ed;
-        }
-
-        #content a {
-          color: #f5c4b8;
-        }
-
-        #content a:hover {
-          color: #ffd9d0;
-        }
-
-        #content a:visited {
-          color: #f5c4b8;
-        }
-
-        #content a:visited:hover {
-          color: #ffd9d0;
-        }
-
-        nav h3 a {
-          color: #e8a89d;
-        }
-
-        nav h3 a:hover {
-          color: #f5bfb5;
-        }
-
-        nav h3 a:visited {
-          color: #e8a89d;
-        }
-
-        nav h3 a:visited:hover {
-          color: #f5bfb5;
-        }
-
-        #content input[type="checkbox"] {
-          border-color: #e8a89d;
-        }
-
-        #content input[type="checkbox"]:checked {
-          background-color: #e8a89d;
-        }
-
-        #content input[type="checkbox"]:checked::after {
-          border-color: #1a1816;
-        }
-
-        #content #privacy-policy ul li::marker {
-          color: #e8a89d;
-        }
-
-        #updates hr {
-          background: linear-gradient(
-            to right,
-            transparent,
-            #4a4038 20%,
-            #4a4038 80%,
-            transparent
-          );
-        }
-
-        .menu-toggle {
-          color: #f5f3ed;
-          background: #1a1816;
-        }
-
-        nav {
-          background-color: #1a1816;
-        }
-
-        .mobile-header {
-          background-color: #1a1816;
-        }
-      }
+      /* ===== end DEV PREVIEW ===== */
     </style>
   </head>
   <body>
-    <div class="mobile-header"></div>
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    <a
-      href="https://apps.apple.com/us/app/emma-email/id6747730134"
-      class="mobile-app-store"
-    >
-      <img src="./app-store.svg" alt="Download on the App Store" />
-    </a>
-    <main>
-      <nav>
-        <h1>Emma Email</h1>
-        <p><i>Beautifully Simple Email</i></p>
-
-        <p>
-          <a
-            href="https://apps.apple.com/us/app/emma-email/id6747730134"
-            style="cursor: pointer"
-          >
-            <img src="./app-store.svg" alt="app store download" />
-          </a>
-        </p>
-
-        <h2>Goals</h2>
-        <h3><a href="#inbox-zero">Inbox Zero</a></h3>
-        <h3><a href="#profit">Profit</a></h3>
-
-        <h2>Values</h2>
-        <h3><a href="#less">Less</a></h3>
-        <h3><a href="#honesty">Honesty</a></h3>
-        <h3><a href="#privacy">Privacy</a></h3>
-
-        <h2>Features</h2>
-        <h3><a href="#one-tap-unsubscribe">One-Tap Unsubscribe</a></h3>
-        <h3><a href="#read-receipts">Read Receipts</a></h3>
-        <h3><a href="#email-to-text">Email to Text 2FA Codes</a></h3>
-        <h3><a href="#set-aside">Set Aside</a></h3>
-        <h3><a href="#no-ai">No AI</a></h3>
-
-        <h2>Roadmap</h2>
-        <h3><a href="#features">Features</a></h3>
-        <h3><a href="#updates">Updates</a></h3>
-      </nav>
-
-      <div id="content">
-        <section
-          id="welcome"
-          class="content-section active"
-          data-nav-title="Meet Emma"
+    <header class="masthead">
+      <div class="spine masthead-inner">
+        <a class="wordmark" href="#top"
+          ><img src="app-icon.png" alt="" />Emma</a
         >
-          <h2 style="text-align: center">
-            Beautiful Email, Thoughtfully Crafted for Everyday People
-          </h2>
-          <p style="text-align: center">
-            Email's gotten out of hand. Your inbox should make you feel good.
-            Fellow travelers missing
-            <a href="https://en.wikipedia.org/wiki/Newton_(software)">Newton</a>
-            will be pleased.
-          </p>
-          <div
-            style="
-              margin: 0 auto;
-              width: fit-content;
-              margin-top: 2rem;
-              margin-bottom: 2rem;
-            "
-          >
-            <picture>
-              <source
-                srcset="./orange-frame.png"
-                media="(prefers-color-scheme: dark)"
-              />
-              <img
-                src="./blue-frame.png"
-                alt="screenshot"
-                style="max-width: 280px"
-              />
-            </picture>
-          </div>
-
-          <div style="text-align: center">
-            <img
-              src="./emma-waving.png"
-              alt="emma waving"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Meet Emma</h2>
-          </div>
-          <p>
-            Emma is an <a href="#no-ai">opinionated</a>,
-            <a href="#less">minimalist</a> email client made by
-            <a href="https://github.com/pachun">one person</a> who loved and
-            misses
-            <a href="https://en.wikipedia.org/wiki/Newton_(software)">Newton</a
-            >, which went out of business in July of 2024. Newton got a lot
-            right. It was plain and pretty. Now that it's gone, I have the
-            opportunity to steer the spirit of what Newton left behind in the
-            <a href="#features">direction</a> I want.
-          </p>
-          <p>
-            I want one inbox and I prefer it empty. Emma helps me get there
-            every day and I'd like to share it with you.
-          </p>
-          <p>
-            Emma is a work in progress. Right now, it only runs on iOS devices
-            and it only supports Gmail. It'll technically run on your silicon
-            Mac, but I can't honestly endorse that experience. It's bad.
-          </p>
-          <p>
-            If you've got time to continue reading about Emma, I'll advertise
-            features that may not be complete or even started yet. They're
-            indicated with
-            <span data-tag="not-started"></span> and
-            <span data-tag="in-development"></span>
-            tags below their feature descriptions. If you're interested in
-            trying Emma only after one of those features are completed, you can
-            check back in with the <a href="#features">roadmap</a> at your
-            discretion, or
-            <a href="https://discord.gg/AJE6DrsGTe">join the Discord</a> where I
-            post updates as I finish things.
-          </p>
-        </section>
-
-        <section id="one-tap-unsubscribe" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./inbox-police.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>One-Tap Unsubscribe</h2>
-          </div>
-          <p>
-            Let's say you just received an email, the likes of which you never
-            want polluting your inbox again. Maybe there's an unsubscribe link
-            at the bottom. <em>Scroll scroll scroll</em>. Found it! Your email
-            client fades into the background, a browser opens and a page loads.
-            It's a sign in screen. Got your credentials? Nice! Another page
-            loads. A list of checkboxes appear. You need to update your
-            notification preferences. Was that a marketing email or a company
-            update you just received? Whatever. Uncheck everything. Oh, there's
-            a <em>Save Preferences</em> button at the bottom. Good thing you
-            didn't miss that!
-          </p>
-          <p><em>Please allow 48 hours for your changes to be applied.</em></p>
-          <p>You've gotta be kidding.</p>
-          <p>
-            When's the last time you entered credit card information only to
-            have a vendor respond "We'll charge you soon, and probably." This
-            stuff is automated. Unsubscribing should be as instant as seeing the
-            number in your bank account decrease. No wonder people go to bed
-            with four-digit red badges on their email app. They've given up.
-          </p>
-          <p>
-            Take back control of your inbox with Emma by tapping the in-app
-            unsubscribe button that's always in the same place, above every
-            email you read. One tap. Done.
-          </p>
-          <p>
-            No scrolling. No leaving your email app. No signing in. No
-            notification preference adjustments. No "48 hour" nonsense.
-          </p>
-        </section>
-
-        <section id="read-receipts" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./read-receipts.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Read Receipts</h2>
-          </div>
-          <p>
-            You know those "read" badges that appear below iMessages you've sent
-            to other people? The recipient has to have them turned on for you to
-            receive them. With Emma, you can turn them on for the recipients of
-            emails you send.
-          </p>
-          <p>
-            Emma won't just tell you whether or not they've read your emails,
-            but also <em>when</em> they read your emails. It's useful knowing
-            when recipients aren't receiving your emails so that you can reach
-            out through some other medium.
-          </p>
-        </section>
-
-        <section id="email-to-text" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./emma-switchboard.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Email to Text 2FA Codes</h2>
-          </div>
-          <p>
-            Signing into an app with two-factor authentication (2FA) is a great
-            security measure, but it can be a chore for users. It's nice when
-            codes are sent via text message because iPhones and Macs will show
-            an option to auto populate fields with the received code.
-          </p>
-          <p>
-            When 2FA codes are sent in an email, it's more of a hassle. Was the
-            code included in the notification preview? Can you memorize it
-            before the notification runs away? Maybe not. Gotta open the email
-            client and copy it, then go back to the browser and paste it in.
-          </p>
-          <p>Another inconvenience Emma'd like to save you from.</p>
-          <p>
-            Emma extracts 2FA codes from emails you've received and forwards
-            them to you in a short text message so that you can tap (or click)
-            that helpful "autofill from text message" popup that appears below
-            the field.
-          </p>
-        </section>
-
-        <section id="set-aside" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./set-aside.png"
-              alt="set aside"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Set Aside</h2>
-          </div>
-          <p>
-            My original intent was to have a single inbox for all accounts. No
-            tags. No folders. No over-the-top, jira-style, over-engineered
-            groups of sub groups for emails. Just an inbox. That's all.
-          </p>
-          <p>
-            The idea was that anything in my inbox is a todo item and anything
-            archived was searchable. Which is half true. The problem is that not
-            everything in my inbox is a todo item (though most are). Some things
-            I know I'll need later and require no action now. I'm talking about
-            things like restaurant reservations and plane tickets - or a
-            newsletter I don't have time to read now, but don't want cluttering
-            up what's otherwise the most up-to-date list of all the things the
-            world needs from me.
-          </p>
-          <p>
-            For all those things, Emma has a "Set Aside" action that moves
-            things out of your inbox and into a convenient place for easy access
-            later. Once you're done with something that's been set aside, you
-            can swipe it just like you'd archive in your inbox to remove it from
-            your set aside pile.
-          </p>
-        </section>
-
-        <section id="no-ai" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./no-ai.png"
-              alt="no ai"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>No AI</h2>
-          </div>
-          <p style="text-align: center">Write your own damn emails.</p>
-        </section>
-
-        <section id="less" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./jobs-pose2.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Less</h2>
-          </div>
-          <p>
-            Emma aims to be the email client that you can download and use
-            without prior experience. She has a tiny set of
-            <a href="#read-receipts">unique features</a> to make life
-            <a href="#email-to-text">easier</a> in
-            <a href="#one-tap-unsubscribe">novel ways</a>, but having
-            <a href="#no-ai">less</a> than the competition will always be her
-            north star.
-          </p>
-          <p>
-            Emma focuses on what matters, does those things well and then
-            removes the noise. Her mission is to get you to
-            <a href="#inbox-zero">inbox zero</a> so that you can lay your head
-            down on the pillow at night knowing the world doesn't need anything
-            else from you.
-          </p>
-          <!-- <p> -->
-          <!--   Looking for folders? There aren't any. Trying to delete an email? -->
-          <!--   You can't; Archive it. That way, you can search for and find it -->
-          <!--   later. You have an inbox (read: things you need to do), not your -->
-          <!--   inbox (things you can search for but don't need to take up space in -->
-          <!--   your brain every time you open Emma) and a "Read Later" section for -->
-          <!--   things like reservations, tickets and newsletters that aren't to-dos -->
-          <!--   but that you'll want later. -->
-          <!-- </p> -->
-          <p>
-            Emma is made by
-            <a href="https://github.com/pachun">one person</a> using
-            <a href="https://elixir-lang.org">tech</a> that will
-            <a href="https://www.gigalixir.com">scale</a> without dramatically
-            increasing costs. It runs code written only
-            <a href="https://en.wikipedia.org/wiki/Test-driven_development"
-              >as needed</a
-            >
-            that saves only <a href="#privacy">what's necessary</a>.
-          </p>
-          <p>Less is less.</p>
-        </section>
-
-        <section id="honesty" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./no-fine-print.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Honesty</h2>
-          </div>
-          <p>
-            Emma hates
-            <a href="#one-tap-unsubscribe">dark patterns</a>. That's why she
-            doesn't auto charge you at the end of your free trial. You have to
-            okay that first. It's surprising that that's an endorsed
-            in-app-purchase flow in Apple's App Store.
-          </p>
-          <!-- <p> -->
-          <!--   For all the other products that aren't as honest as Emma this way, -->
-          <!--   you should check out <a href="https://privacy.com">Privacy.com</a>; -->
-          <!--   A service totally unrelated to Emma that lets you create virtual -->
-          <!--   credit card numbers, set a total (or periodic) spend limit and -->
-          <!--   forget about it. If the card's overcharged, you'll get an email -->
-          <!--   letting you know it was declined. (<em -->
-          <!--     >pssst, use it for your cable and ISP subscriptions</em -->
-          <!--   >). You can also enter totally 'bump' info for your name and address -->
-          <!--   - Because why does the vendor of your cash-for-digital-product need -->
-          <!--   to know your name or where you live? It doesn't. -->
-          <!-- </p> -->
-          <p>
-            Emma's also up front about <a href="#less">who</a>
-            <a href="#privacy">she</a> <a href="#profit">is</a>. She doesn't
-            charge you $480 per year and then add
-            <a href="./superhuman-fuckery.png">a bunch of filters</a> to your
-            Gmail account promoting her marketing content and preventing you
-            from marking it as spam, like
-            <a href="https://superhuman.com">some other email clients</a> do.
-          </p>
-          <p>
-            Nope! Emma
-            <a href="#inbox-zero">doesn't send marketing content</a> to begin
-            with. And if you do initiate a conversation with support (uh, me),
-            you can <a href="">unsubscribe</a> from that thread with a single
-            tap, just like any other email. Oh, and Emma's only 21% of the price
-            of <a href="https://superhuman.com">that other email client</a>.
-          </p>
-          <p>
-            Emma also does what you'd expect her to do in terms of handling your
-            data. Your emails are securely delivered to the device in your hand
-            and <a href="#privacy">never saved to a disk you don't own</a>.
-          </p>
-        </section>
-
-        <section id="privacy" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./shush.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Privacy</h2>
-          </div>
-          <p>
-            Emma takes your privacy seriously. The official
-            <a href="#privacy-policy">privacy policy</a> was written by a
-            non-legal human to be read by non-legal humans. It also happens to
-            appease the lawyers (Apple's and Google's so far, anyway).
-          </p>
-          <p>You can think of how your emails are handled this way:</p>
-          <p>
-            There's an open laptop at Google HQ. Your emails are on that
-            laptop's hard drive. There's another open laptop which belongs to
-            Emma in Iowa. When you open Emma on your phone, your phone sends a
-            request to Emma's laptop, Emma forwards that request to Google's
-            laptop and Google responds to Emma's laptop which responds to the
-            Emma app on your iPhone.
-          </p>
-          <p>
-            It <em>has</em> to happen that way. The only secure way of ensuring
-            that your emails are going to the entity which you granted access to
-            when you signed in with Google and accepted the listed permissions,
-            is to send them to a server (Emma's laptop), which is verified as
-            belonging to Emma. Google can't send the emails directly to your
-            phone. I'd prefer it that way. It'd be less work for me. Google
-            requires third party Gmail apps work this way.
-          </p>
-          <p>
-            <em>Every third party Gmail application you've used does this</em>.
-          </p>
-          <p>
-            Now that we've got that admission out of the way, let's get to the
-            bit that sets Emma apart from other third party Gmail clients: She
-            doesn't keep your emails. She just forwards them to the device in
-            your hand in the quickest, most secure way possible and forgets
-            about them. Simply put, if you can see a loading spinner in the Emma
-            app, Emma's computer in Iowa has your emails in memory, because it's
-            forwarding them to you. When the loading spinner goes away, that
-            computer doesn't have your emails anymore, at all. Period.
-          </p>
-          <p>
-            The reason that's interesting is because most other third party
-            Gmail applications don't act in the type of "stateless relay" way
-            that Emma does. Emma was built because the founder (myself) missed
-            an email client named
-            <a href="https://en.wikipedia.org/wiki/Newton_(software)">Newton</a>
-            which recently went out of business. Newton had great features, but
-            it also openly stored user's emails on their servers.
-            <a href="">Spark</a>, a popular client right now, admits in its
-            privacy policy that they keep user's emails on their servers, on
-            disk, albeit encrypted. <a href="">Edison</a>, another popular
-            client right now not only stores users emails, but historically
-            monetized commercial data extracted from them.
-            <a href="">Superhuman</a> claims not to store user emails, though
-            their history is laden with security scandals suggesting otherwise.
-          </p>
-          <p>
-            Those places are different. They have boards of directors and
-            investors. They're inventing new ways to make money. I'm interested
-            in making the best possible email client for myself and selling the
-            same experience directly to you.
-          </p>
-          <p>
-            Squirreling away your emails is actually non-trivial work, too. It
-            takes time to write the code to save your emails and it costs money
-            to pay for the space to store them. Win. Win.
-          </p>
-        </section>
-
-        <section id="inbox-zero" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./empty-mailbox.png"
-              alt="one tap unsubscribe"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Inbox Zero</h2>
-          </div>
-          <p>
-            It helps me sleep knowing the world doesn't need anything else from
-            me. When I go to bed, my virtual and physical mailboxes should be
-            empty. Also, the laundry should be folded and the dishwasher should
-            be unloaded. I can't help you with those last bits, but Emma can
-            help make emptying your virtual mailbox more manageable. She also
-            has
-            <a href="https://www.usps.com/manage/informed-delivery.htm"
-              >plans to make your virtual mailbox an extension of your physical
-              one</a
-            >.
-          </p>
-          <p>
-            Emma helps you hit inbox zero by
-            <a href="#less">removing unnecessary noise</a> and
-            <a href="#one-tap-unsubscribe"
-              >providing ways to stop the flood of unwanted emails</a
-            >.
-          </p>
-          <p>
-            Emma's serious about getting you to inbox zero. That's why she never
-            invades your inbox without your permission. Did you sign up to use
-            Emma? Let me be the first to say "thank you!" right here, without
-            polluting your inbox. Apple will send the receipt.
-          </p>
-          <p>
-            You can
-            <a href="mailto:nick@emmaemail.app">get in touch with me</a>,
-            <a href="#updates">follow along here for general updates</a> or get
-            more involved by
-            <a href="https://discord.gg/AJE6DrsGTe"
-              >joining the community Discord</a
-            >
-            . I encourage you to do any or all of those things, if they interest
-            you. Hearing from you is the best part of my day! But Emma will
-            never assume that you enjoy hearing from me. She assumes you're
-            interested in being left the hell alone while you work towards inbox
-            zero. She'll <a href="#one-tap-unsubscribe">try to help</a> where
-            she can and never actively work against that goal.
-          </p>
-        </section>
-
-        <section id="profit" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./ledger.png"
-              alt="ledger"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Profit</h2>
-          </div>
-          <p>
-            There's a reason that <em>Inbox Zero</em> is listed first in Emma's
-            <em>Goals</em> section. I'm building Emma because I want something
-            that doesn't exist yet and I know how to make it. I'd also love to
-            share Emma and not lose money doing it.
-          </p>
-          <p>
-            Emma has no investors, no ads and a "free" tier that I sponsor (free
-            - for you). I have spent thousands of personal dollars on
-            infrastructure, logging solutions, database backups, monitoring
-            tools, bug tracking software, Gmail API access, iOS developer
-            licenses, continuous build tooling, an LLC and more. I've also
-            invested hundreds of (if not, a thousand) hours prototyping,
-            designing, building, deploying, testing, monitoring, and marketing
-            Emma. I started working on Emma in August of 2024 and put it in the
-            iOS App Store in July of 2025.
-          </p>
-          <p>
-            The good news is that costs shouldn't increase for a long time, even
-            as more people use it. If about 50 people sign up for Emma Email
-            Pro, they'll roughly cover the cost of running Emma (excluding
-            development time).
-          </p>
-          <p>
-            Any income after that would go towards paying me back for the time
-            I've already spent working on Emma or (super romantically) nudging
-            me towards working on it full time. ❤️
-          </p>
-        </section>
-
-        <section id="features" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./roadmap.png"
-              alt="roadmap"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Features</h2>
-          </div>
-          <p></p>
-          <ul style="list-style: none; padding-left: 0">
-            <li>
-              <input type="checkbox" checked disabled />
-              <span
-                >One-Tap Unsubscribe
-              >
-            </li>
-            <li>
-              <input type="checkbox" checked disabled />
-              <span>Default Email Client</span>
-            </li>
-            <li>
-              <input type="checkbox" checked disabled />
-              <span>Set Aside</span>
-            </li>
-            <li>
-              <input type="checkbox" checked disabled />
-              <span>Read Receipts</span>
-            </li>
-            <li>
-              <input type="checkbox" disabled />
-              <span>Paywall (<a href="#updates">in progress</a>)</span>
-            </li>
-            <li>
-              <input type="checkbox" disabled />
-              <span
-                >Public Promotion (Hacker News, Product Hunt, old Newton mailing
-                lists, etc)</span
-              >
-            </li>
-            <li>
-              <input type="checkbox" disabled />
-              <span>Composition Improvements</span>
-              <ul style="list-style: none">
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Rich Text (bold, italic, etc)</span>
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Send Attachments</span>
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Autocomplete Recipient Email Addresses</span>
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span
-                    >Auto-Set Sender Account to Searched Sender Account</span
-                  >
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Forwarding/Replying Banners with Popover Previews</span>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <input type="checkbox" disabled />
-              <span>Improve Attachment Integration</span>
-              <ul style="list-style: none">
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Add .ics Attachments to Calendar</span>
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Preview .ppt attachments</span>
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Preview .doc attachments</span>
-                </li>
-                <li>
-                  <input type="checkbox" disabled />
-                  <span>Preview .xls attachments</span>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <input type="checkbox" disabled />
-              <span>Mac Desktop Client</span>
-            </li>
-            <li>
-              <input type="checkbox" disabled />
-              <span>Other Email Hosts (iCloud, etc)</span>
-            </li>
-          </ul>
-        </section>
-
-        <section id="updates" class="content-section">
-          <div style="text-align: center">
-            <img
-              src="./microphone.png"
-              alt="microphone"
-              style="max-height: 150px; padding-bottom: 1rem"
-            />
-            <h2>Updates</h2>
-          </div>
-          <p style="text-align: center"><strong>Dec 7, 2025</strong></p>
-          <p><strong>Read Receipts</strong></p>
-          <p>
-            <a href="./updates/read-receipts.png">Read receipts</a> are live! I
-            just finished working on them and I didn't do a ton of testing, so I
-            bet one of you will break it. I'm getting crash reports, but if you
-            see anything uniquely wrong, please don't hesitate to
-            <a href="mailto:nick@emmaemail.app">contact me</a> or
-            <a href="https://discord.gg/AJE6DrsGTe">pop into the discord</a> and
-            let me know there.
-          </p>
-          <p>
-            Also, I got another
-            <a href="./updates/email-from-google.png"
-              >email from Google today</a
-            >
-            letting me know they'll still vetting my request for increased
-            permissions.
-          </p>
-          <hr />
-          <p style="text-align: center"><strong>Nov 30, 2025</strong></p>
-          <p><strong>One-Tap Unsubscribe</strong></p>
-          <p>
-            I have built the
-            <a href="#one-tap-unsubscribe">One-Tap Unsubscribe</a> feature, but
-            I can't give it to you yet because the Gmail permissions you give me
-            when you sign in with Google don't permit creating and editing
-            <a href="https://support.google.com/mail/answer/6579?hl=en"
-              >Gmail filters</a
-            >, which is how unsubscribes will work. To get those permissions
-            from you, I need Google's permission first.
-          </p>
-          <p>
-            I asked Google for those increased permissions on November 18th.
-            Every third day since then, they've responded with "sorry to keep
-            you waiting; we're backed up." I wouldn't be so sore about the time
-            it's taking if applying for the new permissions hadn't broken my
-            existing permissions, which has been preventing new signups since
-            November 18th. Until then, I'd been averaging 1-3 new signups per
-            day.
-          </p>
-          <p>Since then: 0</p>
-          <p>
-            I'm pretty sure it was technically my fault that happened. I think I
-            did something wrong. The Google Cloud Console (where that's
-            configured) confuses me.
-          </p>
-          <p><strong>Default Email Client</strong></p>
-          <p>
-            There's a way, in iOS, to set a specific app as your default email
-            client. Several of you have emailed me personally asking for this
-            feature. I need to manually ask Apple for that permission by filling
-            out a form. I've filled that form out 3 times over the past couple
-            of months and received no responses. I contacted Apple's general
-            developer support, and they're working through why that's taking so
-            long with me.
-          </p>
-          <p><strong>Read Receipts</strong></p>
-          <p>
-            When I receive feedback from you guys, I usually already have an
-            opinion and typically stick with it. When the feedback is this
-            overwhelming, though, I adjust priorities. I'd prefer to work on the
-            "Set Aside" feature before implementing read receipts, myself, but
-            you all <em>really</em> want read receipts. I think that means I'm
-            reaching the right crowd. Emma was made to fill the Newton-shaped
-            hole in my heart and Newton users were used to having read receipts.
-            I'd like to keep that crowd happy. Read receipts are in progress and
-            I don't need anything from Apple or Google (as above) to get them
-            done.
-          </p>
-          <p><strong>Paywall</strong></p>
-          <p>It's a feature to me! 😅</p>
-          <p>
-            Soon I will start asking you for money. My plan is to give away a
-            free month of Emma to each new user and then
-            <a href="#honesty">ask for your permission</a> to start charging for
-            pro features. Pro features will be read receipts, set aside, one-tap
-            unsubscribe, email to text 2fa codes, and dark mode. Pricing is
-            hard; right now I'm thinking I'll list two plans: $10 monthly or
-            $100 yearly. If you opt out you can still use Emma; with a single
-            account and without those pro features. If you're just into Emma for
-            her minimalist design: She's free, forever.
-          </p>
-        </section>
-
-        <section id="privacy-policy" class="content-section">
-          <h2>Privacy Policy</h2>
-          <p>
-            This policy applies to all information collected through The Emma
-            App.
-          </p>
-          <h3>Information Emma Collects About You</h3>
-          <p>
-            The following list is the entirety of the information we store about
-            you.
-          </p>
-          <ul>
-            <li>An access token (received from Google)</li>
-            <li>A refresh token (received from Google)</li>
-            <li>
-              An access token expiration date and time (received from Google)
-            </li>
-            <li>Your Gmail address (received from Google)</li>
-            <li>
-              The first and last names associated with your Gmail address
-              (received from Google)
-            </li>
-            <li>
-              A URL link to your Gmail address avatar (received from Google)
-            </li>
-            <li>A history ID (received from Google)</li>
-            <li>A push notification token (received from iOS)</li>
-            <li>Your phone number (received within The Emma App)</li>
-          </ul>
-          <h3>Where Emma Gets This Stuff</h3>
-
-          <p>
-            We receive all but the last two items above when you consent to
-            allow Google to share your information with The Emma App. You are
-            prompted to grant consent when you sign into The Emma App.
-          </p>
-
-          <p>
-            <a href="https://myaccount.google.com/connections"
-              >You can remove consent here</a
-            >.
-          </p>
-
-          <p>
-            We store your push notification token if and when you opt to receive
-            push notifications for new inbox emails in The Emma App. You are
-            prompted to grant permission to share your push notification token
-            after signing in to The Emma App with a Gmail account.
-          </p>
-
-          <p>
-            You can disable our push notification token on your iOS device by
-            going to Settings → Apps → Emma → Notifications and toggling the
-            <b>Allow Notifications</b> switch.
-          </p>
-
-          <p>
-            We store your phone number if you volunteer it within the settings
-            section of The Emma App. You can remove our access to your phone
-            number in the settings section of The Emma App.
-          </p>
-
-          <h3>Why Emma Keeps This Stuff</h3>
-
-          <p>
-            Your access and refresh tokens enable The Emma App to show you your
-            inbox emails, as well as compose and deliver emails from your Gmail
-            address in The Emma App. Consent to share your Google account
-            information with The Emma App is necessary for The Emma App to
-            function. The access token expiration date and times are also
-            necessary to allow us to provide you with the aforementioned
-            features unless and until you revoke The Emma App’s Gmail
-            permissions.
-            <a href="https://myaccount.google.com/connections"
-              >You can remove consent here</a
-            >.
-          </p>
-
-          <p>
-            Your Gmail address, first and last names, as well as your avatar are
-            used to indicate to you which Gmail accounts you have linked to The
-            Emma App. Again, you can
-            <a href="https://myaccount.google.com/connections"
-              >disable The Emma App’s access on a per-Gmail-account basis by
-              following this link</a
-            >.
-          </p>
-
-          <p>
-            Your history ID is used to show you your most up-to-date inbox when
-            you open the app without having to pull to refresh your inbox emails
-            list in The Emma App.
-            <a href="https://myaccount.google.com/connections"
-              >You can disable our access to updated history IDs here</a
-            >.
-          </p>
-
-          <p>
-            We store your push notification token if and when you opt to receive
-            push notifications for new inbox emails in The Emma App. This is an
-            opt-in feature.
-          </p>
-
-          <p>
-            You can disable our push notification token on your iOS device by
-            going to Settings → Apps → Emma → Notifications and toggling the
-            <b>Allow Notifications</b> switch.
-          </p>
-
-          <p>
-            Your phone number is used to resend you 2FA (two-factor
-            authentication) codes as text messages when they’re sent to you as
-            an email to make pre-filling them on your iPhone easier. This is an
-            opt-in feature. You can remove our access to your phone number in
-            the settings section of The Emma App.
-          </p>
-
-          <h3>Revoking Emma’s Access to This Stuff</h3>
-
-          <p>
-            <a href="https://myaccount.google.com/connections"
-              >You can remove consent to share the above-listed Gmail account
-              information with us here</a
-            >.
-          </p>
-
-          <p>
-            You can disable our push notification token on your iOS device by
-            going to Settings → Apps → Emma → Notifications and toggling the
-            <b>Allow Notifications</b> switch.
-          </p>
-
-          <p>
-            You can remove our access to your phone number in the settings
-            section of The Emma App.
-          </p>
-
-          <h3>How Emma Protects This Stuff</h3>
-
-          <p>
-            The above-listed information is kept in a password-protected
-            database at rest and encrypted in transit using the
-            industry-standard TLS protocol.
-          </p>
-
-          <h3>Anonymized Information Emma Collects</h3>
-
-          <p>
-            The Emma App sends anonymized (not connected to your personally
-            identifiable information in any way) crash reports to
-            <a href="https://sentry.io/">Sentry</a>'s servers so that we may fix
-            problems that cause The Emma App to break.
-          </p>
-
-          <h3>Ephemeral Information Emma Handles</h3>
-
-          <p>
-            All information discussed until this point refers to information
-            that The Emma App collects and stores on disk. Other information
-            passes through The Emma App’s servers, which we do not persist.
-          </p>
-
-          <p><b>Namely, your emails.</b></p>
-
-          <p>
-            Your emails pass through The Emma App’s servers because it’s
-            Google’s preferred and secure way of allowing third-party
-            applications like The Emma App to access and handle your data. Your
-            emails exist on The Emma App’s servers only in memory and only while
-            you’re fetching them.
-          </p>
-
-          <p>
-            Plainly put, when you can see a loading spinner in the app, your
-            emails exist on The Emma App’s servers in memory (not on disk). When
-            the loading spinner goes away, The Emma App has finished forwarding
-            your emails to your device and no longer has them on servers in any
-            way (in memory, on disk, or in any other way).
-          </p>
-
-          <h3>Retention and Deletion of Google User Data</h3>
-
-          <p>
-            Google user data is retained only as long as necessary to provide
-            our services. Removing a Gmail account from your Emma Email account
-            will delete the Google user data for that account from our servers.
-            If you delete your Emma Email account, all associated Google user
-            data is permanently deleted from our servers.
-          </p>
-
-          <h3>In Summary</h3>
-
-          <p>
-            <b
-              >Every bit of information you trust us with is used for the sole
-              purpose of making The Emma App useful to its users.</b
-            >
-          </p>
-
-          <p>
-            We do not send marketing emails, push notifications, or text
-            messages.
-          </p>
-
-          <p>We never call you.</p>
-
-          <p>We do not sell your information.</p>
-        </section>
+        <nav class="masthead-nav">
+          <a href="#price">$2.99/mo</a>
+          <a href="#features">Courtesies</a>
+          <a href="#no-ai">No AI</a>
+        </nav>
+        <a
+          class="button button-small header-cta"
+          href="https://apps.apple.com/us/app/emma-email/id6747730134"
+          >Get&nbsp;Emma</a
+        >
       </div>
-    </main>
+    </header>
 
-    <footer>
-      <a href="#privacy-policy">Privacy Policy</a>
-      <span>·</span>
-      <a href="https://discord.gg/AJE6DrsGTe">Discord</a>
-      <span>·</span>
-      <a href="https://status.emmaemail.app">Status</a>
-      <span>·</span>
-      <a href="mailto:nick@emmaemail.app">Contact</a>
-      <div class="copyright">© 2025 Castle Labs, LLC</div>
-    </footer>
+    <div class="spine">
+      <section class="hero" id="top">
+        <div>
+          <p class="label">Opinionated email for iPhones</p>
+          <h1>One inbox.<br />Empty.</h1>
 
+          <p class="hero-blurb">
+            Your inbox has a bottom.<br />Fewer features and less spam get you
+            there.
+          </p>
+          <div class="cta-row">
+            <a
+              class="button"
+              href="https://apps.apple.com/us/app/emma-email/id6747730134"
+              >Get Emma</a
+            >
+            <p class="cta-note">One week free. Then $2.99/mo.</p>
+          </div>
+        </div>
+        <div class="hero-emma">
+          <img
+            src="emma-hero.webp"
+            alt="Emma, illustrated in a mid-century advertising style, leaning on an open and empty curbside mailbox"
+          />
+        </div>
+      </section>
+    </div>
+
+    <div class="spine">
+      <section class="price reveal" id="price">
+        <div class="price-grid">
+          <div class="feature-body measure">
+            <p class="label">Fewer features</p>
+            <h2 class="feature-title">Expect less.</h2>
+            <p>
+              Email apps are addicted to adding features. AI summaries,
+              calendars, chat. The good parts drown in noise. Emma subtracts the
+              noise and complements what's left.
+            </p>
+            <p>Less isn't more. It's better.</p>
+            <p>
+              <em>Less is less.</em>
+            </p>
+          </div>
+          <div class="price-stack">
+            <div>
+              <p class="price-figure">$2.99<span>/mo</span></p>
+              <p class="price-term">One week free. Then $2.99/mo.</p>
+            </div>
+            <div class="price-compare">
+              <p class="label">What others charge</p>
+              <ul class="bars">
+                <li class="bar-row is-emma">
+                  <span class="bar-name">Emma</span>
+                  <span class="bar-track"
+                    ><span class="bar-fill" style="width: 9.97%"></span
+                  ></span>
+                  <span class="bar-value">$2.99</span>
+                </li>
+                <li class="bar-row">
+                  <span class="bar-name">Fastmail</span>
+                  <span class="bar-track"
+                    ><span class="bar-fill" style="width: 20%"></span
+                  ></span>
+                  <span class="bar-value">$6</span>
+                </li>
+                <li class="bar-row">
+                  <span class="bar-name">Spark</span>
+                  <span class="bar-track"
+                    ><span class="bar-fill" style="width: 33.33%"></span
+                  ></span>
+                  <span class="bar-value">$10</span>
+                </li>
+                <li class="bar-row">
+                  <span class="bar-name">Superhuman</span>
+                  <span class="bar-track"
+                    ><span class="bar-fill" style="width: 50%"></span
+                  ></span>
+                  <span class="bar-value">$15</span>
+                </li>
+                <li class="bar-row">
+                  <span class="bar-name">Edison</span>
+                  <span class="bar-track"
+                    ><span class="bar-fill" style="width: 50%"></span
+                  ></span>
+                  <span class="bar-value">$15</span>
+                </li>
+                <li class="bar-row">
+                  <span class="bar-name">Shortwave</span>
+                  <span class="bar-track"
+                    ><span class="bar-fill" style="width: 100%"></span
+                  ></span>
+                  <span class="bar-value">$30</span>
+                </li>
+              </ul>
+              <p class="bar-note">
+                Cheapest paid plan, billed monthly. July 2026.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="spine">
+      <section class="features" id="features">
+        <p class="label section-head">Courtesies</p>
+        <article class="feature reveal">
+          <div class="feature-body">
+            <p class="label">One-tap unsubscribe</p>
+            <h2 class="feature-title">Obliterate spam.</h2>
+            <p>
+              You know the routine. You receive an email you never wanted,
+              scroll to the bottom, tap unsubscribe and Safari takes over to
+              show a sign-in page. After signing in, you wonder whether to
+              uncheck "marketing" or "promotional" — so you uncheck everything
+              and pat yourself on the back for not missing that save button.
+              Then you see it.
+            </p>
+            <p>
+              <em>Please allow 48 hours for your changes to take effect.</em>
+            </p>
+            <p>Emma's unsubscribe works instantly.</p>
+          </div>
+          <div class="feature-art">
+            <img
+              src="feature-unsubscribe.webp"
+              alt="A 1950s hand-cranked paper shredder with an envelope fed into it and shredded ribbons spilling out"
+              loading="lazy"
+            />
+          </div>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-body">
+            <p class="label">Read receipts</p>
+            <h2 class="feature-title">Know what was read.</h2>
+            <p>
+              Silence is ambiguous. Get notified when your emails are read so
+              you know whether to follow up or move on.
+            </p>
+          </div>
+          <div class="feature-art">
+            <img
+              src="feature-receipts.webp"
+              alt="A long curling paper receipt with rows of faint printed marks"
+              loading="lazy"
+            />
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-body">
+            <p class="label">Texted 2FA codes</p>
+            <h2 class="feature-title">Tap, don't type.</h2>
+            <p>
+              iPhones let you prefill two-factor authentication codes received
+              via text message. Emailed codes have you memorizing digits in a
+              notification preview as it runs away.
+            </p>
+            <p>
+              Emma pulls 2FA codes out of emails and texts them to you. Tap the
+              suggestion above your keyboard. Carry on.
+            </p>
+          </div>
+          <div class="feature-art">
+            <img
+              src="feature-2fa.webp"
+              alt="A small brass key lying across a torn slip of paper"
+              loading="lazy"
+            />
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-body">
+            <p class="label">Set aside</p>
+            <h2 class="feature-title">Keep what needs doing.</h2>
+            <p>
+              Reservations. Plane tickets. That newsletter you'll read on
+              Friday. None of them need doing but you'll want them later.
+            </p>
+            <p>Set them aside — out of your inbox, not out of reach.</p>
+          </div>
+          <div class="feature-art">
+            <img
+              src="feature-set-aside.webp"
+              alt="Three envelopes held down by a round glass paperweight"
+              loading="lazy"
+            />
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <section class="slab reveal" id="no-ai">
+      <div class="spine">
+        <h2>Write your own damn emails.</h2>
+        <p>You can get your AI fix just about anywhere else.</p>
+      </div>
+    </section>
+
+    <div class="spine">
+      <section class="maker reveal">
+        <div class="maker-grid">
+          <div class="maker-head"><h2>End the day empty.</h2></div>
+          <div class="maker-body measure">
+            <p>
+              Emma is devoted to the closure at the bottom of your inbox. She
+              <em>never</em> sends you email. Let's get your welcome email out
+              of the way:
+            </p>
+            <p class="thanks">Thanks for choosing Emma.</p>
+            <ul class="tally">
+              <li>
+                <span class="tally-label">Welcome emails not sent</span>
+                <span class="tally-value">1,847</span>
+                <span class="tally-track"
+                  ><span class="tally-bar" style="width: 34%"></span
+                ></span>
+              </li>
+              <li>
+                <span class="tally-label">Unread badges not incremented</span>
+                <span class="tally-value">1,847</span>
+                <span class="tally-track"
+                  ><span class="tally-bar" style="width: 34%"></span
+                ></span>
+              </li>
+              <li class="tally-runaway">
+                <span class="tally-label"
+                  >Electrons not displaced from their homes</span
+                >
+                <span class="tally-value">6.02 &times; 10<sup>23</sup></span>
+                <span class="tally-track"
+                  ><span class="tally-bar" style="width: 100%"></span
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <div class="maker-cta">
+            <p class="price-term">One week free. Then $2.99/mo.</p>
+            <p class="badge">
+              <a href="https://apps.apple.com/us/app/emma-email/id6747730134"
+                ><img src="app-store.svg" alt="Download on the App Store"
+              /></a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Emma Email &middot; Castle Labs LLC</p>
+        <nav>
+          <a href="privacy-policy.html">Privacy policy</a>
+          <a href="https://discord.gg/AJE6DrsGTe">Discord</a>
+        </nav>
+      </footer>
+    </div>
+
+    <!-- ===== DEV PREVIEW — delete this block and the CSS block marked DEV PREVIEW before launch ===== -->
+    <div id="theme-preview" role="group" aria-label="Theme preview">
+      <button type="button" data-theme-set="system" aria-pressed="true">
+        Sys
+      </button>
+      <button type="button" data-theme-set="light" aria-pressed="false">
+        Light
+      </button>
+      <button type="button" data-theme-set="dark" aria-pressed="false">
+        Dark
+      </button>
+    </div>
     <script>
-      // PostHog tracking - time spent per section
-      let currentSection = null;
-      let sectionStartTime = null;
-
-      function trackSectionTime() {
-        if (currentSection && sectionStartTime && window.posthog) {
-          const timeSpent = Date.now() - sectionStartTime;
-          posthog.capture("section_view_duration", {
-            section: currentSection,
-            duration_ms: timeSpent,
-            duration_seconds: Math.round(timeSpent / 1000),
-          });
-        }
-      }
-
-      // Prevent browser's default hash scroll on load
-      if (window.location.hash) {
-        window.scrollTo(0, 0);
-      }
-
-      function showSection(hash) {
-        // Track time spent on previous section
-        trackSectionTime();
-
-        // Hide all sections
-        document.querySelectorAll(".content-section").forEach((section) => {
-          section.classList.remove("active");
-        });
-
-        // Show the target section, or default to welcome
-        const targetId = hash || "welcome";
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.classList.add("active");
-
-          // Track section view
-          if (window.posthog) {
-            posthog.capture("section_viewed", {
-              section: targetId,
-            });
-          }
-
-          // Start timing for new section
-          currentSection = targetId;
-          sectionStartTime = Date.now();
-
-          // Scroll to top of page
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      }
-
-      // Mobile menu toggle
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("nav");
-
-      function closeMenu() {
-        nav.classList.remove("nav-open");
-        document.body.classList.remove("menu-open");
-        menuToggle.classList.remove("showing-close");
-        menuToggle.textContent = "☰";
-      }
-
-      function openMenu() {
-        nav.classList.add("nav-open");
-        document.body.classList.add("menu-open");
-        menuToggle.classList.add("showing-close");
-        menuToggle.textContent = "✕";
-      }
-
-      menuToggle.addEventListener("click", () => {
-        if (nav.classList.contains("nav-open")) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
-
-      // h1 click - clear hash and show welcome
-      const h1 = document.querySelector("nav h1");
-      h1.addEventListener("click", () => {
-        window.location.hash = "";
-        closeMenu();
-      });
-
-      // Handle navigation link clicks
-      document.querySelectorAll("nav h3 a").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const hash = link.getAttribute("href").slice(1);
-          window.location.hash = hash;
-          showSection(hash);
-          closeMenu();
-        });
-      });
-
-      // Listen for hash changes
-      window.addEventListener("hashchange", () => {
-        const hash = window.location.hash.slice(1);
-        showSection(hash);
-      });
-
-      // Handle initial hash on load
-      const initialHash = window.location.hash.slice(1);
-      showSection(initialHash);
-
-      // Generate previous/next navigation links
-      function generateSectionNav() {
-        // Get section order from navigation links
-        const navLinks = Array.from(document.querySelectorAll("nav h3 a"));
-        const sectionOrder = navLinks.map((link) =>
-          link.getAttribute("href").slice(1),
+      const themeButtons = [
+        ...document.querySelectorAll("#theme-preview button"),
+      ];
+      const applyTheme = (choice) => {
+        if (choice === "system")
+          document.documentElement.removeAttribute("data-theme");
+        else document.documentElement.setAttribute("data-theme", choice);
+        document.documentElement.style.colorScheme =
+          choice === "system" ? "" : "only " + choice;
+        themeButtons.forEach((button) =>
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.themeSet === choice),
+          ),
         );
-
-        // Add the welcome section at the beginning if not in nav
-        if (!sectionOrder.includes("welcome")) {
-          sectionOrder.unshift("welcome");
-        }
-
-        sectionOrder.forEach((sectionId, index) => {
-          const section = document.getElementById(sectionId);
-          if (!section) return;
-
-          // Skip if nav already exists
-          if (section.querySelector(".section-nav")) return;
-
-          const navContainer = document.createElement("div");
-          navContainer.className = "section-nav";
-
-          // Previous link
-          if (index > 0) {
-            const prevId = sectionOrder[index - 1];
-            const prevSection = document.getElementById(prevId);
-            const prevTitle =
-              prevSection?.getAttribute("data-nav-title") ||
-              prevSection?.querySelector("h2")?.textContent ||
-              "Previous";
-
-            const prevLink = document.createElement("a");
-            prevLink.href = `#${prevId}`;
-            prevLink.className = "nav-prev";
-            prevLink.textContent = `← Previous: ${prevTitle}`;
-            prevLink.addEventListener("click", (e) => {
-              e.preventDefault();
-              window.location.hash = prevId;
-              showSection(prevId);
-              closeMenu();
-            });
-
-            navContainer.appendChild(prevLink);
-          }
-
-          // Next link
-          if (index < sectionOrder.length - 1) {
-            const nextId = sectionOrder[index + 1];
-            const nextSection = document.getElementById(nextId);
-            const nextTitle =
-              nextSection?.getAttribute("data-nav-title") ||
-              nextSection?.querySelector("h2")?.textContent ||
-              "Next";
-
-            const nextLink = document.createElement("a");
-            nextLink.href = `#${nextId}`;
-            nextLink.className = "nav-next";
-            nextLink.textContent = `Next: ${nextTitle} →`;
-            nextLink.addEventListener("click", (e) => {
-              e.preventDefault();
-              window.location.hash = nextId;
-              showSection(nextId);
-              closeMenu();
-            });
-
-            navContainer.appendChild(nextLink);
-          }
-
-          // Only add the nav container if there are links
-          if (navContainer.children.length > 0) {
-            section.appendChild(navContainer);
-          }
-        });
-      }
-
-      // Generate navigation links on page load
-      generateSectionNav();
-
-      // Tag definitions
-      const tagDefinitions = {
-        "not-started": {
-          label: "Not Started",
-          class: "not-started",
-          tooltip: `This feature hasn't been built yet, but it is on Emma's roadmap. You can <a href="https://discord.gg/AJE6DrsGTe">join the discord server</a> to be updated as features are completed.`,
-        },
-        "in-development": {
-          label: "In Development",
-          class: "in-development",
-          tooltip: `This feature is currently being built. Join the <a href="https://discord.gg/AJE6DrsGTe">discord server</a> for updates!`,
-        },
       };
-
-      // Initialize tags
-      function initializeTags() {
-        document.querySelectorAll("[data-tag]").forEach((placeholder) => {
-          const tagName = placeholder.getAttribute("data-tag");
-          const tagDef = tagDefinitions[tagName];
-
-          if (!tagDef) {
-            console.warn(`Unknown tag: ${tagName}`);
-            return;
-          }
-
-          const tagElement = document.createElement("div");
-          tagElement.className = `feature-tag ${tagDef.class}`;
-          tagElement.textContent = tagDef.label;
-
-          const tooltip = document.createElement("div");
-          tooltip.className = "tooltip";
-          tooltip.innerHTML = tagDef.tooltip;
-
-          tagElement.appendChild(tooltip);
-          placeholder.replaceWith(tagElement);
-        });
-      }
-
-      // Initialize tags on page load
-      initializeTags();
-
-      // Handle mobile tooltip taps
-      document.addEventListener("click", (e) => {
-        const tag = e.target.closest(".feature-tag");
-
-        if (tag) {
-          // Toggle tooltip for the clicked tag
-          tag.classList.toggle("tooltip-active");
-          e.stopPropagation();
-        } else {
-          // Close all tooltips when clicking outside
-          document
-            .querySelectorAll(".feature-tag.tooltip-active")
-            .forEach((t) => {
-              t.classList.remove("tooltip-active");
-            });
-        }
-      });
-
-      // Open external links in new tabs
-      document.querySelectorAll("a").forEach((link) => {
-        const href = link.getAttribute("href");
-        // Check if link is external (not a hash link or empty)
-        if (href && !href.startsWith("#") && href !== "") {
-          link.setAttribute("target", "_blank");
-          link.setAttribute("rel", "noopener noreferrer");
-        }
-      });
-
-      // Track time spent on last section when user leaves the page
-      window.addEventListener("beforeunload", () => {
-        trackSectionTime();
-      });
-
-      // Track App Store link clicks
-      document.querySelectorAll('a[href*="apps.apple.com"]').forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.posthog) {
-            const isMobile = link.closest(".mobile-app-store") !== null;
-            posthog.capture("app_store_click", {
-              location: isMobile ? "mobile_header" : "nav_sidebar",
-              current_section: currentSection || "welcome",
-            });
-          }
-        });
+      themeButtons.forEach((button) =>
+        button.addEventListener("click", () =>
+          applyTheme(button.dataset.themeSet),
+        ),
+      );
+      addEventListener("keydown", (event) => {
+        if (
+          event.key !== "t" ||
+          event.metaKey ||
+          event.ctrlKey ||
+          /^(INPUT|TEXTAREA)$/.test(event.target.tagName)
+        )
+          return;
+        const order = ["system", "light", "dark"];
+        const current = document.documentElement.dataset.theme || "system";
+        applyTheme(order[(order.indexOf(current) + 1) % order.length]);
       });
     </script>
+    <!-- ===== end DEV PREVIEW ===== -->
+
     <script>
-      !(function (t, e) {
-        var o, n, p, r;
-        e.__SV ||
-          ((window.posthog = e),
-          (e._i = []),
-          (e.init = function (i, s, a) {
-            function g(t, e) {
-              var o = e.split(".");
-              (2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                (t[e] = function () {
-                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-                }));
-            }
-            (((p = t.createElement("script")).type = "text/javascript"),
-              (p.crossOrigin = "anonymous"),
-              (p.async = !0),
-              (p.src =
-                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-                "/static/array.js"),
-              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-                p,
-                r,
-              ));
-            var u = e;
-            for (
-              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                u.people = u.people || [],
-                u.toString = function (t) {
-                  var e = "posthog";
-                  return (
-                    "posthog" !== a && (e += "." + a),
-                    t || (e += " (stub)"),
-                    e
-                  );
-                },
-                u.people.toString = function () {
-                  return u.toString(1) + ".people (stub)";
-                },
-                o =
-                  "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(
-                    " ",
-                  ),
-                n = 0;
-              n < o.length;
-              n++
-            )
-              g(u, o[n]);
-            e._i.push([i, s, a]);
-          }),
-          (e.__SV = 1));
-      })(document, window.posthog || []);
-      posthog.init("phc_7vdPZVJ2NBkinmcgXJZO7A3FIGX2P7DJbLySA80OVeZ", {
-        api_host: "https://us.i.posthog.com",
-        defaults: "2025-11-30",
-      });
+      const revealed = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("seen");
+            revealed.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px 0px -18% 0px" },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((node) => revealed.observe(node));
+
+      const watched = [...document.querySelectorAll(".masthead-nav a")]
+        .map((link) => ({
+          link,
+          section: document.querySelector(link.getAttribute("href")),
+        }))
+        .filter((entry) => entry.section);
+      const inView = new Set();
+      const litLink = () => {
+        const first = watched.find((entry) => inView.has(entry.section));
+        watched.forEach(({ link }) =>
+          link.classList.toggle(
+            "is-current",
+            Boolean(first) && link === first.link,
+          ),
+        );
+      };
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) inView.add(entry.target);
+            else inView.delete(entry.target);
+          });
+          litLink();
+        },
+        { rootMargin: "-40% 0px -45% 0px" },
+      );
+      watched.forEach(({ section }) => spy.observe(section));
+
+      const masthead = document.querySelector(".masthead");
+      const syncHeaderHeight = () =>
+        document.documentElement.style.setProperty(
+          "--header-h",
+          `${masthead.getBoundingClientRect().height}px`,
+        );
+      syncHeaderHeight();
+      document.fonts.ready.then(syncHeaderHeight);
+      addEventListener("resize", syncHeaderHeight, { passive: true });
+
+      const markStuck = () =>
+        masthead.classList.toggle("is-stuck", window.scrollY > 8);
+      addEventListener("scroll", markStuck, { passive: true });
+      markStuck();
     </script>
   </body>
 </html>
