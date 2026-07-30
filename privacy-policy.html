@@ -11,12 +11,12 @@
     <meta property="og:title" content="Privacy policy — Emma Email" />
     <meta
       property="og:description"
-      content="Opinionated email for iPhones. One week free. Then $2.99/mo."
+      content="Everything Emma stores about you, why she stores it, and how to take it back."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Emma Email" />
-    <meta property="og:url" content="https://emmaemail.app/" />
+    <meta property="og:url" content="https://emmaemail.app/privacy-policy" />
     <meta property="og:image" content="https://emmaemail.app/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -168,6 +168,14 @@
           max-width: 42rem;
           margin-inline: auto;
           padding-block: clamp(3rem, 8vw, 6rem) clamp(4rem, 10vw, 7rem);
+        }
+
+        .doc-date {
+          margin-top: 1.25rem;
+          font-size: 0.8125rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-faint);
         }
 
         .doc-lede {
@@ -800,15 +808,10 @@
       .badge img {
         width: 150px;
       }
-
       @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) .badge img {
+        .badge img {
           filter: invert(1);
         }
-      }
-
-      :root[data-theme="dark"] .badge img {
-        filter: invert(1);
       }
 
       footer {
@@ -900,44 +903,6 @@
         }
       }
 
-      /* ===== DEV PREVIEW — delete this block and the one marked DEV PREVIEW below before launch ===== */
-      #theme-preview {
-        position: fixed;
-        right: 0.75rem;
-        bottom: 0.75rem;
-        z-index: 99;
-        display: flex;
-        gap: 1px;
-        padding: 2px;
-        border-radius: 100px;
-        background: var(--paper-sunk);
-        border: 1px solid var(--rule);
-        opacity: 0.1;
-        transition: opacity 0.25s;
-      }
-      #theme-preview:hover,
-      #theme-preview:focus-within {
-        opacity: 1;
-      }
-      #theme-preview button {
-        font: inherit;
-        font-size: 0.6875rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--ink-faint);
-        background: none;
-        border: 0;
-        border-radius: 100px;
-        padding: 0.3rem 0.7rem;
-        cursor: pointer;
-      }
-      #theme-preview button[aria-pressed="true"] {
-        background: var(--ink);
-        color: var(--paper);
-      }
-      /* ===== end DEV PREVIEW ===== */
-
       .doc {
         max-width: 42rem;
         margin-inline: auto;
@@ -1020,6 +985,7 @@
         <p class="doc-lede">
           Written by a non-legal human to be read by non-legal humans.
         </p>
+        <p class="doc-date">Last updated 2 December 2025</p>
         <p>
           This policy applies to all information collected through The Emma App.
         </p>
@@ -1249,54 +1215,5 @@
         </nav>
       </footer>
     </div>
-
-    <!-- ===== DEV PREVIEW — delete this block and the CSS block marked DEV PREVIEW before launch ===== -->
-    <div id="theme-preview" role="group" aria-label="Theme preview">
-      <button type="button" data-theme-set="system" aria-pressed="true">
-        Sys
-      </button>
-      <button type="button" data-theme-set="light" aria-pressed="false">
-        Light
-      </button>
-      <button type="button" data-theme-set="dark" aria-pressed="false">
-        Dark
-      </button>
-    </div>
-    <script>
-      const themeButtons = [
-        ...document.querySelectorAll("#theme-preview button"),
-      ];
-      const applyTheme = (choice) => {
-        if (choice === "system")
-          document.documentElement.removeAttribute("data-theme");
-        else document.documentElement.setAttribute("data-theme", choice);
-        document.documentElement.style.colorScheme =
-          choice === "system" ? "" : "only " + choice;
-        themeButtons.forEach((button) =>
-          button.setAttribute(
-            "aria-pressed",
-            String(button.dataset.themeSet === choice),
-          ),
-        );
-      };
-      themeButtons.forEach((button) =>
-        button.addEventListener("click", () =>
-          applyTheme(button.dataset.themeSet),
-        ),
-      );
-      addEventListener("keydown", (event) => {
-        if (
-          event.key !== "t" ||
-          event.metaKey ||
-          event.ctrlKey ||
-          /^(INPUT|TEXTAREA)$/.test(event.target.tagName)
-        )
-          return;
-        const order = ["system", "light", "dark"];
-        const current = document.documentElement.dataset.theme || "system";
-        applyTheme(order[(order.indexOf(current) + 1) % order.length]);
-      });
-    </script>
-    <!-- ===== end DEV PREVIEW ===== -->
   </body>
 </html>

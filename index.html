@@ -737,15 +737,10 @@
       .badge img {
         width: 150px;
       }
-
       @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) .badge img {
+        .badge img {
           filter: invert(1);
         }
-      }
-
-      :root[data-theme="dark"] .badge img {
-        filter: invert(1);
       }
 
       footer {
@@ -836,44 +831,6 @@
           transform: none;
         }
       }
-
-      /* ===== DEV PREVIEW — delete this block and the one marked DEV PREVIEW below before launch ===== */
-      #theme-preview {
-        position: fixed;
-        right: 0.75rem;
-        bottom: 0.75rem;
-        z-index: 99;
-        display: flex;
-        gap: 1px;
-        padding: 2px;
-        border-radius: 100px;
-        background: var(--paper-sunk);
-        border: 1px solid var(--rule);
-        opacity: 0.1;
-        transition: opacity 0.25s;
-      }
-      #theme-preview:hover,
-      #theme-preview:focus-within {
-        opacity: 1;
-      }
-      #theme-preview button {
-        font: inherit;
-        font-size: 0.6875rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--ink-faint);
-        background: none;
-        border: 0;
-        border-radius: 100px;
-        padding: 0.3rem 0.7rem;
-        cursor: pointer;
-      }
-      #theme-preview button[aria-pressed="true"] {
-        background: var(--ink);
-        color: var(--paper);
-      }
-      /* ===== end DEV PREVIEW ===== */
     </style>
   </head>
   <body>
@@ -1161,55 +1118,6 @@
         </nav>
       </footer>
     </div>
-
-    <!-- ===== DEV PREVIEW — delete this block and the CSS block marked DEV PREVIEW before launch ===== -->
-    <div id="theme-preview" role="group" aria-label="Theme preview">
-      <button type="button" data-theme-set="system" aria-pressed="true">
-        Sys
-      </button>
-      <button type="button" data-theme-set="light" aria-pressed="false">
-        Light
-      </button>
-      <button type="button" data-theme-set="dark" aria-pressed="false">
-        Dark
-      </button>
-    </div>
-    <script>
-      const themeButtons = [
-        ...document.querySelectorAll("#theme-preview button"),
-      ];
-      const applyTheme = (choice) => {
-        if (choice === "system")
-          document.documentElement.removeAttribute("data-theme");
-        else document.documentElement.setAttribute("data-theme", choice);
-        document.documentElement.style.colorScheme =
-          choice === "system" ? "" : "only " + choice;
-        themeButtons.forEach((button) =>
-          button.setAttribute(
-            "aria-pressed",
-            String(button.dataset.themeSet === choice),
-          ),
-        );
-      };
-      themeButtons.forEach((button) =>
-        button.addEventListener("click", () =>
-          applyTheme(button.dataset.themeSet),
-        ),
-      );
-      addEventListener("keydown", (event) => {
-        if (
-          event.key !== "t" ||
-          event.metaKey ||
-          event.ctrlKey ||
-          /^(INPUT|TEXTAREA)$/.test(event.target.tagName)
-        )
-          return;
-        const order = ["system", "light", "dark"];
-        const current = document.documentElement.dataset.theme || "system";
-        applyTheme(order[(order.indexOf(current) + 1) % order.length]);
-      });
-    </script>
-    <!-- ===== end DEV PREVIEW ===== -->
 
     <script>
       const revealed = new IntersectionObserver(
