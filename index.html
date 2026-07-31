@@ -586,13 +586,14 @@
 
       .maker {
         border-top: 1px solid var(--rule);
-        padding-block: clamp(3.5rem, 8vw, 6rem);
+        padding-block: clamp(3rem, 6vw, 4.5rem);
       }
 
       .maker-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-        gap: clamp(1.5rem, 5vw, 4rem);
+        column-gap: clamp(1.5rem, 5vw, 4rem);
+        row-gap: clamp(1.5rem, 3vw, 2.25rem);
         align-items: start;
       }
 
@@ -604,15 +605,11 @@
       .maker-body {
         grid-column: 2;
         grid-row: 1 / span 2;
-        align-self: stretch;
-        display: flex;
-        flex-direction: column;
       }
 
       .maker-cta {
         grid-column: 1;
         grid-row: 2;
-        align-self: end;
       }
 
       .maker-cta .badge {
@@ -628,9 +625,7 @@
       }
 
       .maker-body .thanks {
-        margin-top: auto;
-        margin-bottom: -0.32em;
-        padding-top: 1rem;
+        margin-top: 1.75rem;
         font-family: var(--serif);
         font-size: clamp(1.35rem, 2.2vw, 1.7rem);
         line-height: 1.3;
@@ -993,9 +988,9 @@
           <div class="maker-head"><h2>End the day empty.</h2></div>
           <div class="maker-body measure">
             <p>
-              Emma is devoted to the closure at the bottom of your inbox. She
-              <em>never</em> sends you email. Let's get your welcome email out
-              of the way:
+              Emma is devoted to the closure found at the bottom of your inbox.
+              She <em>never</em> sends you email. Not even a welcome email. Oh,
+              by the way:
             </p>
             <p class="thanks">Thanks for choosing Emma.</p>
           </div>
