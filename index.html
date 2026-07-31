@@ -158,8 +158,7 @@
           opacity: 1 !important;
           transform: none !important;
         }
-        .maker .thanks,
-        .maker .tally li {
+        .maker .thanks {
           opacity: 1 !important;
           transform: none !important;
         }
@@ -343,7 +342,6 @@
       /* ---------------- hero ---------------- */
 
       .hero {
-        border-bottom: 1px solid var(--rule);
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
         gap: clamp(2rem, 5vw, 4rem);
@@ -352,6 +350,7 @@
       }
 
       .hero-blurb {
+        text-wrap: balance;
         margin-top: 1.5rem;
         max-width: 26rem;
         font-size: 1.1875rem;
@@ -411,11 +410,6 @@
       .button-small {
         font-size: 0.9375rem;
         padding: 0.55rem 1.1rem;
-      }
-
-      .cta-note {
-        font-size: 0.9375rem;
-        color: var(--ink-soft);
       }
 
       /* ---------------- price ---------------- */
@@ -643,89 +637,20 @@
       }
 
       @media (prefers-reduced-motion: no-preference) {
-        .maker .thanks,
-        .maker .tally li {
+        .maker .thanks {
           opacity: 0;
           transform: translateY(10px);
           transition:
             opacity 0.55s ease,
             transform 0.55s cubic-bezier(0.2, 0.7, 0.3, 1);
         }
-        .maker.seen .thanks,
-        .maker.seen .tally li {
+        .maker.seen .thanks {
           opacity: 1;
           transform: none;
         }
         .maker.seen .thanks {
           transition-delay: 0.28s;
         }
-        .maker.seen .tally li:nth-child(1) {
-          transition-delay: 0.58s;
-        }
-        .maker.seen .tally li:nth-child(2) {
-          transition-delay: 0.71s;
-        }
-        .maker.seen .tally li:nth-child(3) {
-          transition-delay: 0.84s;
-        }
-      }
-
-      .tally {
-        list-style: none;
-        margin-bottom: -0.45em;
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
-        font-size: 0.875rem;
-        color: var(--ink-soft);
-      }
-
-      .tally li {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto 7rem;
-        align-items: center;
-        gap: 0.85rem;
-      }
-
-      .tally-label {
-        min-width: 0;
-      }
-
-      .tally-track {
-        display: block;
-        height: 7px;
-        overflow: visible;
-      }
-
-      .tally-bar {
-        display: block;
-        height: 100%;
-        background: var(--bar);
-        border-radius: 0 4px 4px 0;
-      }
-
-      .tally-runaway .tally-bar {
-        width: 100vw !important;
-        background: var(--bar);
-        border-radius: 0;
-        -webkit-mask-image: linear-gradient(
-          to right,
-          #000 0 60%,
-          transparent 100%
-        );
-        mask-image: linear-gradient(to right, #000 0 60%, transparent 100%);
-      }
-
-      .tally-value {
-        text-align: right;
-        font-variant-numeric: tabular-nums;
-        white-space: nowrap;
-      }
-
-      .tally-value sup {
-        font-size: 0.62em;
-        vertical-align: super;
-        line-height: 0;
       }
 
       /* ---------------- close ---------------- */
@@ -783,11 +708,16 @@
       }
 
       @media (max-width: 900px) {
+        .hero-blurb br {
+          display: none;
+        }
+        .price-grid {
+          gap: clamp(2.5rem, 8vw, 3.5rem);
+        }
         .hero {
           grid-template-columns: minmax(0, 1fr);
         }
         .hero-emma {
-          order: -1;
           width: min(100%, 17rem);
         }
         .price-grid,
@@ -806,9 +736,6 @@
         }
         .maker-body .thanks {
           margin-block: 1.2rem 0;
-        }
-        .tally {
-          margin-top: 1.6rem;
         }
         .feature-art {
           order: -1;
@@ -861,7 +788,7 @@
           <h1>One inbox.<br />Empty.</h1>
 
           <p class="hero-blurb">
-            Your inbox has a bottom.<br />Fewer features and less spam get you
+            Your inbox has a bottom. <br />Fewer features and less spam get you
             there.
           </p>
           <div class="cta-row">
@@ -872,7 +799,6 @@
               rel="noopener"
               >Get Emma</a
             >
-            <p class="cta-note">One week free. Then $2.99/mo.</p>
           </div>
         </div>
         <div class="hero-emma">
@@ -903,7 +829,7 @@
           <div class="price-stack">
             <div>
               <p class="price-figure">$2.99<span>/mo</span></p>
-              <p class="price-term">One week free. Then $2.99/mo.</p>
+              <p class="price-term">After one free week.</p>
             </div>
             <div class="price-compare">
               <p class="label">What others charge</p>
@@ -966,7 +892,7 @@
         <article class="feature reveal">
           <div class="feature-body">
             <p class="label">One-tap unsubscribe</p>
-            <h2 class="feature-title">Obliterate spam.</h2>
+            <h2 class="feature-title">Stop tomorrow's spam.</h2>
             <p>
               You know the routine. You receive an email you never wanted,
               scroll to the bottom, tap unsubscribe and Safari takes over to
@@ -978,7 +904,10 @@
             <p>
               <em>Please allow 48 hours for your changes to take effect.</em>
             </p>
-            <p>Emma's unsubscribe works instantly.</p>
+            <p>
+              Emma's unsubscribe works instantly and makes tomorrow's inbox
+              lighter.
+            </p>
           </div>
           <div class="feature-art">
             <img
@@ -1068,31 +997,6 @@
               of the way:
             </p>
             <p class="thanks">Thanks for choosing Emma.</p>
-            <ul class="tally">
-              <li>
-                <span class="tally-label">Welcome emails not sent</span>
-                <span class="tally-value">1,847</span>
-                <span class="tally-track"
-                  ><span class="tally-bar" style="width: 34%"></span
-                ></span>
-              </li>
-              <li>
-                <span class="tally-label">Unread badges not incremented</span>
-                <span class="tally-value">1,847</span>
-                <span class="tally-track"
-                  ><span class="tally-bar" style="width: 34%"></span
-                ></span>
-              </li>
-              <li class="tally-runaway">
-                <span class="tally-label"
-                  >Electrons not displaced from their homes</span
-                >
-                <span class="tally-value">6.02 &times; 10<sup>23</sup></span>
-                <span class="tally-track"
-                  ><span class="tally-bar" style="width: 100%"></span
-                ></span>
-              </li>
-            </ul>
           </div>
           <div class="maker-cta">
             <p class="price-term">One week free. Then $2.99/mo.</p>
