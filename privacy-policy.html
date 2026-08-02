@@ -54,106 +54,6 @@
     />
     <noscript>
       <style>
-        @font-face {
-          font-family: "Instrument Sans";
-          font-style: italic;
-          font-weight: 400 700;
-          font-display: swap;
-          src: url("fonts/instrument-sans-italic-latin-ext.woff2")
-            format("woff2");
-          unicode-range:
-            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-
-        @font-face {
-          font-family: "Instrument Sans";
-          font-style: italic;
-          font-weight: 400 700;
-          font-display: swap;
-          src: url("fonts/instrument-sans-italic-latin.woff2") format("woff2");
-          unicode-range:
-            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
-            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-          font-family: "Instrument Sans";
-          font-style: normal;
-          font-weight: 400 700;
-          font-display: swap;
-          src: url("fonts/instrument-sans-normal-latin-ext.woff2")
-            format("woff2");
-          unicode-range:
-            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-
-        @font-face {
-          font-family: "Instrument Sans";
-          font-style: normal;
-          font-weight: 400 700;
-          font-display: swap;
-          src: url("fonts/instrument-sans-normal-latin.woff2") format("woff2");
-          unicode-range:
-            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
-            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-          font-family: "Instrument Serif";
-          font-style: italic;
-          font-weight: 400;
-          font-display: swap;
-          src: url("fonts/instrument-serif-italic-latin-ext.woff2")
-            format("woff2");
-          unicode-range:
-            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-
-        @font-face {
-          font-family: "Instrument Serif";
-          font-style: italic;
-          font-weight: 400;
-          font-display: swap;
-          src: url("fonts/instrument-serif-italic-latin.woff2") format("woff2");
-          unicode-range:
-            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
-            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
-        @font-face {
-          font-family: "Instrument Serif";
-          font-style: normal;
-          font-weight: 400;
-          font-display: swap;
-          src: url("fonts/instrument-serif-normal-latin-ext.woff2")
-            format("woff2");
-          unicode-range:
-            U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-            U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-            U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-
-        @font-face {
-          font-family: "Instrument Serif";
-          font-style: normal;
-          font-weight: 400;
-          font-display: swap;
-          src: url("fonts/instrument-serif-normal-latin.woff2") format("woff2");
-          unicode-range:
-            U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-            U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
-            U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-
         .reveal {
           opacity: 1 !important;
           transform: none !important;
@@ -163,76 +63,107 @@
           opacity: 1 !important;
           transform: none !important;
         }
-
-        .doc {
-          max-width: 42rem;
-          margin-inline: auto;
-          padding-block: clamp(3rem, 8vw, 6rem) clamp(4rem, 10vw, 7rem);
-        }
-
-        .doc-date {
-          margin-top: 1.25rem;
-          font-size: 0.8125rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: var(--ink-faint);
-        }
-
-        .doc-lede {
-          margin-top: 1.5rem;
-          font-family: var(--serif);
-          font-size: clamp(1.25rem, 2vw, 1.6rem);
-          line-height: 1.35;
-          color: var(--ochre);
-        }
-
-        .doc h2 {
-          font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-          line-height: 1.15;
-          margin-top: clamp(2.75rem, 6vw, 4rem);
-        }
-
-        .doc p {
-          margin-top: 1.1rem;
-          color: var(--ink-soft);
-        }
-
-        .doc h2 + p {
-          margin-top: 1.1rem;
-        }
-
-        .doc ul {
-          margin-top: 1.1rem;
-          padding-left: 1.1rem;
-          color: var(--ink-soft);
-          display: flex;
-          flex-direction: column;
-          gap: 0.4rem;
-        }
-
-        .doc li::marker {
-          color: var(--ink-faint);
-        }
-
-        .doc a {
-          color: var(--ink);
-          text-decoration: underline;
-          text-decoration-color: var(--ochre);
-          text-underline-offset: 0.2em;
-        }
-
-        .doc a:hover {
-          color: var(--ochre);
-        }
-
-        .doc strong,
-        .doc b {
-          color: var(--ink);
-          font-weight: 600;
-        }
       </style>
     </noscript>
     <style>
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: italic;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("fonts/instrument-sans-italic-latin-ext.woff2") format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: italic;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("fonts/instrument-sans-italic-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("fonts/instrument-sans-normal-latin-ext.woff2") format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("fonts/instrument-sans-normal-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url("fonts/instrument-serif-italic-latin-ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url("fonts/instrument-serif-italic-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("fonts/instrument-serif-normal-latin-ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("fonts/instrument-serif-normal-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
       :root {
         color-scheme: light dark;
 
@@ -853,6 +784,17 @@
         }
       }
 
+      @media (max-width: 1000px) {
+        .doc .anchor {
+          display: none;
+        }
+        .doc h2 {
+          margin-left: 0;
+          padding-left: 0;
+          cursor: auto;
+        }
+      }
+
       @media (max-width: 900px) {
         .hero {
           grid-template-columns: minmax(0, 1fr);
@@ -915,6 +857,51 @@
         font-size: clamp(1.25rem, 2vw, 1.6rem);
         line-height: 1.35;
         color: var(--ochre);
+      }
+
+      .doc h2 {
+        position: relative;
+        margin-left: -3rem;
+        padding-left: 3rem;
+        cursor: pointer;
+      }
+
+      .doc .anchor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: inherit;
+        color: var(--ochre);
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 0.15s;
+      }
+
+      .doc h2:hover .anchor,
+      .doc .anchor:focus-visible {
+        opacity: 1;
+      }
+
+      .doc h2.copied .anchor {
+        opacity: 1;
+      }
+
+      .doc .copied-flag {
+        margin-left: 0.7em;
+        font-family: var(--sans);
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ochre);
+        vertical-align: middle;
+        opacity: 0;
+        transition: opacity 0.18s;
+        pointer-events: none;
+      }
+
+      .doc h2.copied .copied-flag {
+        opacity: 1;
       }
 
       .doc h2 {
@@ -989,7 +976,14 @@
         <p>
           This policy applies to all information collected through The Emma App.
         </p>
-        <h2>Information Emma Collects About You</h2>
+        <h2 id="information-emma-collects-about-you">
+          Information Emma Collects About You<a
+            class="anchor"
+            href="#information-emma-collects-about-you"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
         <p>
           The following list is the entirety of the information we store about
           you.
@@ -1012,7 +1006,14 @@
           <li>A push notification token (received from iOS)</li>
           <li>Your phone number (received within The Emma App)</li>
         </ul>
-        <h2>Where Emma Gets This Stuff</h2>
+        <h2 id="where-emma-gets-this-stuff">
+          Where Emma Gets This Stuff<a
+            class="anchor"
+            href="#where-emma-gets-this-stuff"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           We receive all but the last two items above when you consent to allow
@@ -1048,7 +1049,14 @@
           number in the settings section of The Emma App.
         </p>
 
-        <h2>Why Emma Keeps This Stuff</h2>
+        <h2 id="why-emma-keeps-this-stuff">
+          Why Emma Keeps This Stuff<a
+            class="anchor"
+            href="#why-emma-keeps-this-stuff"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           Your access and refresh tokens enable The Emma App to show you your
@@ -1111,7 +1119,14 @@
           settings section of The Emma App.
         </p>
 
-        <h2>Revoking Emma’s Access to This Stuff</h2>
+        <h2 id="revoking-emmas-access-to-this-stuff">
+          Revoking Emma’s Access to This Stuff<a
+            class="anchor"
+            href="#revoking-emmas-access-to-this-stuff"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           <a
@@ -1134,7 +1149,14 @@
           of The Emma App.
         </p>
 
-        <h2>How Emma Protects This Stuff</h2>
+        <h2 id="how-emma-protects-this-stuff">
+          How Emma Protects This Stuff<a
+            class="anchor"
+            href="#how-emma-protects-this-stuff"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           The above-listed information is kept in a password-protected database
@@ -1142,7 +1164,14 @@
           protocol.
         </p>
 
-        <h2>Anonymized Information Emma Collects</h2>
+        <h2 id="anonymized-information-emma-collects">
+          Anonymized Information Emma Collects<a
+            class="anchor"
+            href="#anonymized-information-emma-collects"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           The Emma App sends anonymized (not connected to your personally
@@ -1152,7 +1181,14 @@
           break.
         </p>
 
-        <h2>Ephemeral Information Emma Handles</h2>
+        <h2 id="ephemeral-information-emma-handles">
+          Ephemeral Information Emma Handles<a
+            class="anchor"
+            href="#ephemeral-information-emma-handles"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           All information discussed until this point refers to information that
@@ -1177,7 +1213,14 @@
           way (in memory, on disk, or in any other way).
         </p>
 
-        <h2>Retention and Deletion of Google User Data</h2>
+        <h2 id="retention-and-deletion-of-google-user-data">
+          Retention and Deletion of Google User Data<a
+            class="anchor"
+            href="#retention-and-deletion-of-google-user-data"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           Google user data is retained only as long as necessary to provide our
@@ -1187,7 +1230,14 @@
           permanently deleted from our servers.
         </p>
 
-        <h2>In Summary</h2>
+        <h2 id="in-summary">
+          In Summary<a
+            class="anchor"
+            href="#in-summary"
+            aria-label="Copy link to this section"
+            >#</a
+          >
+        </h2>
 
         <p>
           <b
@@ -1215,5 +1265,35 @@
         </nav>
       </footer>
     </div>
+    <script>
+      const headings = [...document.querySelectorAll(".doc h2[id]")];
+      headings.forEach((heading) => {
+        const anchor = heading.querySelector(".anchor");
+        const flag = document.createElement("span");
+        flag.className = "copied-flag";
+        flag.setAttribute("role", "status");
+        heading.appendChild(flag);
+
+        heading.addEventListener("click", async (event) => {
+          if (getComputedStyle(anchor).display === "none") return;
+          event.preventDefault();
+          const url = `${location.origin}${location.pathname}#${heading.id}`;
+          try {
+            await navigator.clipboard.writeText(url);
+          } catch {
+            /* clipboard unavailable; the jump below still happens */
+          }
+          history.replaceState(null, "", `#${heading.id}`);
+          heading.scrollIntoView();
+          flag.textContent = "Copied";
+          heading.classList.add("copied");
+          clearTimeout(heading.dataset.timer);
+          heading.dataset.timer = setTimeout(() => {
+            heading.classList.remove("copied");
+            flag.textContent = "";
+          }, 1600);
+        });
+      });
+    </script>
   </body>
 </html>
