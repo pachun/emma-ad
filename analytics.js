@@ -53,7 +53,7 @@
 posthog.init("phc_z12ceyXTbzcxIEwVhxcX9I49mizYQKtbyiqw55B8mTI", {
   api_host: location.origin + "/ingest",
   ui_host: "https://us.posthog.com",
-  cookieless_mode: "always",
+  persistence: "localStorage",
   person_profiles: "identified_only",
   autocapture: false,
   capture_pageview: true,
