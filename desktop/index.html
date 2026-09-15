@@ -20,8 +20,17 @@
     <meta property="og:image" content="https://emmaemail.app/og-image.jpg" />
     <meta name="twitter:image" content="https://emmaemail.app/og-image.jpg" />
     <link rel="canonical" href="https://emmaemail.app/desktop/" />
-    <link rel="icon" href="../app-icon.png" />
-    <link rel="apple-touch-icon" href="../app-icon.png" />
+    <link
+      rel="icon"
+      href="../app-icon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="../app-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="../app-icon-light.png" />
     <meta
       name="theme-color"
       content="#fdfdfc"
@@ -510,7 +519,12 @@
     <header class="masthead">
       <div class="spine masthead-inner">
         <a class="wordmark" href="../"
-          ><img src="../app-icon.png" alt="" />Emma</a
+          ><picture
+            ><source
+              srcset="../app-icon-dark.png"
+              media="(prefers-color-scheme: dark)" />
+            <img src="../app-icon-light.png" alt="" /></picture
+          >Emma</a
         >
         <nav class="masthead-nav">
           <a href="../#price">$3.99/mo</a>
@@ -532,9 +546,6 @@
         <div>
           <p class="label">Email for Macs and Linux</p>
           <h1>Same inbox.<br />Bigger desk.</h1>
-          <p class="hero-blurb">
-            Everything Emma does on your phone, with a keyboard under it.
-          </p>
 
           <div class="download-choice" data-os="mac">
             <a class="button" href="../download/mac">Download for Mac</a>
@@ -546,16 +557,15 @@
           <div class="download-choice" data-os="linux" hidden>
             <a class="button" href="../download/linux">Download for Linux</a>
             <p class="download-note">
-              An AppImage that updates itself. Also as a
-              <a href="../download/linux/deb">.deb</a> or
-              <a href="../download/linux/rpm">.rpm</a>, which don't.
+              Also as a <a href="../download/linux/deb">.deb</a> or
+              <a href="../download/linux/rpm">.rpm</a>.
             </p>
           </div>
 
           <div class="download-choice" data-os="other" hidden>
-            <p class="hero-blurb">Emma isn't on Windows yet.</p>
+            <p class="hero-blurb">Emma's desktop app is for Macs and Linux.</p>
             <p class="download-note">
-              She's on iPhone, Mac, and Linux for now.
+              Not on Windows yet. On an iPhone, get Emma from the App Store.
             </p>
           </div>
 
@@ -608,8 +618,10 @@
         ""
       ).toLowerCase();
       const agent = navigator.userAgent.toLowerCase();
-      const os =
-        platform.includes("mac") || agent.includes("mac os")
+      const onAPhone = /iphone|ipad|android/.test(agent);
+      const os = onAPhone
+        ? "other"
+        : platform.includes("mac") || agent.includes("mac os")
           ? "mac"
           : platform.includes("linux") || agent.includes("linux")
             ? "linux"

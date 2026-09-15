@@ -26,8 +26,17 @@
     />
     <meta name="twitter:image" content="https://emmaemail.app/og-image.jpg" />
     <link rel="canonical" href="https://emmaemail.app/privacy-policy" />
-    <link rel="icon" href="app-icon.png" />
-    <link rel="apple-touch-icon" href="app-icon.png" />
+    <link
+      rel="icon"
+      href="app-icon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="app-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="app-icon-light.png" />
     <meta
       name="theme-color"
       content="#fdfdfc"
@@ -954,7 +963,12 @@
     <header class="masthead">
       <div class="spine masthead-inner">
         <a class="wordmark" href="index.html"
-          ><img src="app-icon.png" alt="" />Emma</a
+          ><picture
+            ><source
+              srcset="app-icon-dark.png"
+              media="(prefers-color-scheme: dark)" />
+            <img src="app-icon-light.png" alt="" /></picture
+          >Emma</a
         >
         <a
           class="button button-small header-cta"

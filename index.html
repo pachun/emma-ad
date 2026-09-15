@@ -26,8 +26,17 @@
     />
     <meta name="twitter:image" content="https://emmaemail.app/og-image.jpg" />
     <link rel="canonical" href="https://emmaemail.app/" />
-    <link rel="icon" href="app-icon.png" />
-    <link rel="apple-touch-icon" href="app-icon.png" />
+    <link
+      rel="icon"
+      href="app-icon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="app-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="app-icon-light.png" />
     <meta
       name="theme-color"
       content="#fdfdfc"
@@ -835,7 +844,12 @@
     <header class="masthead">
       <div class="spine masthead-inner">
         <a class="wordmark" href="#top"
-          ><img src="app-icon.png" alt="" />Emma</a
+          ><picture
+            ><source
+              srcset="app-icon-dark.png"
+              media="(prefers-color-scheme: dark)" />
+            <img src="app-icon-light.png" alt="" /></picture
+          >Emma</a
         >
         <nav class="masthead-nav">
           <a href="#price">$3.99/mo</a>
@@ -871,7 +885,9 @@
               rel="noopener"
               >Get Emma</a
             >
-            <a class="cta-quiet" href="desktop/">Also for Mac</a>
+            <a class="cta-quiet" href="desktop/" data-desktop-link hidden
+              >Also for Mac</a
+            >
           </div>
         </div>
         <div class="hero-emma">
@@ -1125,11 +1141,13 @@
           <p class="label">Now on your desk</p>
           <h2 class="feature-title">Same inbox. Bigger desk.</h2>
           <p>
-            Everything Emma does on your phone, with a keyboard under it.
-            For Macs and Linux, and she keeps herself up to date.
+            Everything Emma does on your phone, with a keyboard under it. For
+            Macs and Linux, and she keeps herself up to date.
           </p>
           <div class="cta-row">
-            <a class="button" href="desktop/">Get Emma for Mac</a>
+            <a class="button" href="desktop/" data-desktop-button
+              >Get Emma for Mac or Linux</a
+            >
           </div>
         </div>
         <div class="desktop-screen">
@@ -1189,6 +1207,29 @@
     </div>
 
     <script>
+      const agent = navigator.userAgent.toLowerCase();
+      const platform = (
+        navigator.userAgentData?.platform ||
+        navigator.platform ||
+        ""
+      ).toLowerCase();
+      const onAPhone = /iphone|ipad|android/.test(agent);
+      const desktopOs = onAPhone
+        ? "other"
+        : platform.includes("mac") || agent.includes("mac os")
+          ? "mac"
+          : platform.includes("linux") || agent.includes("linux")
+            ? "linux"
+            : "other";
+      const desktopName = { mac: "Mac", linux: "Linux" }[desktopOs];
+      document.querySelectorAll("[data-desktop-link]").forEach((link) => {
+        link.hidden = !desktopName;
+        if (desktopName) link.textContent = `Also for ${desktopName}`;
+      });
+      document.querySelectorAll("[data-desktop-button]").forEach((button) => {
+        if (desktopName) button.textContent = `Get Emma for ${desktopName}`;
+      });
+
       const revealed = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
