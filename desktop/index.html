@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emma for Mac — One inbox. Empty.</title>
+    <meta
+      name="description"
+      content="Emma on your desk. The same empty inbox, on a Mac or Linux."
+    />
+    <meta property="og:title" content="Emma for Mac — One inbox. Empty." />
+    <meta
+      property="og:description"
+      content="Emma on your desk. The same empty inbox, on a Mac or Linux."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Emma Email" />
+    <meta property="og:url" content="https://emmaemail.app/desktop/" />
+    <meta property="og:image" content="https://emmaemail.app/og-image.jpg" />
+    <meta name="twitter:image" content="https://emmaemail.app/og-image.jpg" />
+    <link rel="canonical" href="https://emmaemail.app/desktop/" />
+    <link rel="icon" href="../app-icon.png" />
+    <link rel="apple-touch-icon" href="../app-icon.png" />
+    <meta
+      name="theme-color"
+      content="#fdfdfc"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0e0e0d"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="preload"
+      href="../fonts/instrument-sans-normal-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: italic;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("../fonts/instrument-sans-italic-latin-ext.woff2") format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: italic;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("../fonts/instrument-sans-italic-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("../fonts/instrument-sans-normal-latin-ext.woff2") format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Sans";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: url("../fonts/instrument-sans-normal-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/instrument-serif-italic-latin-ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/instrument-serif-italic-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/instrument-serif-normal-latin-ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/instrument-serif-normal-latin.woff2") format("woff2");
+        unicode-range:
+          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      :root {
+        color-scheme: light dark;
+
+        --paper: light-dark(#fdfdfc, #0e0e0d);
+        --paper-sunk: light-dark(#f4f3f0, #171716);
+        --ink: light-dark(#121211, #eeebe3);
+        --ink-soft: light-dark(#5f5d57, #a3a099);
+        --ink-faint: light-dark(#8a8880, #6e6c66);
+        --rule: light-dark(#e2e0da, #262524);
+        --ochre: light-dark(#9a6b16, #d6a44e);
+        --bar: light-dark(#b3aea2, #57544e);
+        --slab: light-dark(#121211, #f0ede5);
+        --slab-ink: light-dark(#fdfdfc, #121211);
+
+        --sans:
+          "Instrument Sans", ui-sans-serif, system-ui, -apple-system,
+          "Helvetica Neue", sans-serif;
+        --serif: "Instrument Serif", ui-serif, Georgia, serif;
+
+        --gutter: clamp(1.25rem, 5vw, 3rem);
+        --measure: 34rem;
+        --spine: 74rem;
+        --header-h: 4.5rem;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        overflow-x: clip;
+        scroll-behavior: smooth;
+      }
+
+      [id] {
+        scroll-margin-top: var(--header-h);
+      }
+
+      body {
+        overflow-x: clip;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-color: var(--ochre);
+        text-underline-offset: 0.2em;
+      }
+      a:hover {
+        color: var(--ochre);
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      :focus-visible {
+        outline: 2px solid var(--ochre);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+
+      .spine {
+        max-width: var(--spine);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+      .measure {
+        max-width: var(--measure);
+      }
+
+      .label {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+      }
+
+      h1,
+      h2 {
+        font-weight: 600;
+        letter-spacing: -0.028em;
+        line-height: 1.03;
+        text-wrap: balance;
+      }
+      h1 {
+        font-size: clamp(2.75rem, 7.2vw, 5.25rem);
+      }
+      h2 {
+        font-size: clamp(2rem, 4.6vw, 3.25rem);
+      }
+      .feature-title {
+        font-size: clamp(1.5rem, 2.6vw, 2rem);
+        line-height: 1.1;
+      }
+
+      p + p {
+        margin-top: 1.1em;
+      }
+
+      /* ---------------- masthead ---------------- */
+
+      .masthead {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: color-mix(in srgb, var(--paper) 84%, transparent);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+      }
+
+      .masthead.is-stuck {
+        border-bottom-color: var(--rule);
+      }
+
+      .masthead-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-block: 0.9rem;
+      }
+
+      .masthead-nav {
+        display: flex;
+        gap: clamp(1rem, 2.5vw, 2rem);
+        margin-inline: auto;
+        font-size: 0.9375rem;
+      }
+
+      .masthead-nav a {
+        color: var(--ink-faint);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .masthead-nav a:hover,
+      .masthead-nav a.is-current {
+        color: var(--ink);
+      }
+
+      .header-cta {
+        flex: none;
+      }
+
+      .wordmark {
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .wordmark img {
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+      }
+
+      /* ---------------- hero ---------------- */
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+        padding-block: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2.5rem);
+      }
+
+      .hero-blurb {
+        text-wrap: balance;
+        margin-top: 1.5rem;
+        max-width: 26rem;
+        font-size: 1.1875rem;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      .hero h1 {
+        margin-top: 1.25rem;
+      }
+      .hero .lede {
+        margin-top: 1.75rem;
+        max-width: 30rem;
+      }
+
+      .hero-emma {
+        justify-self: center;
+        width: min(100%, 25rem);
+      }
+
+      .hero-emma img {
+        width: 100%;
+        mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+      }
+
+      .cta-row {
+        margin-top: 2.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.9rem 1.25rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--ink);
+        color: var(--paper);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        text-decoration: none;
+        padding: 0.85rem 1.4rem;
+        border-radius: 100px;
+        transition:
+          transform 0.2s cubic-bezier(0.2, 0.7, 0.3, 1),
+          opacity 0.2s;
+      }
+
+      .button:hover {
+        color: var(--paper);
+        opacity: 0.86;
+        transform: translateY(-1px);
+      }
+
+      .button-small {
+        font-size: 0.9375rem;
+        padding: 0.55rem 1.1rem;
+      }
+
+      footer {
+        border-top: 1px solid var(--rule);
+        padding-block: 2rem 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        justify-content: space-between;
+        font-size: 0.875rem;
+        color: var(--ink-faint);
+      }
+
+      footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+      }
+
+      /* ---------------- reveal ---------------- */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+      }
+      .reveal.seen {
+        opacity: 1;
+        transform: none;
+      }
+
+
+      /* ---------------- download ---------------- */
+
+      .download {
+        padding-block: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2.5rem);
+      }
+
+      .download h1 {
+        margin-top: 1.25rem;
+      }
+
+      .download-choice {
+        margin-top: 2.25rem;
+      }
+
+      .download-note {
+        margin-top: 1rem;
+        font-size: 0.9375rem;
+        color: var(--ink-faint);
+      }
+
+      .download-note a {
+        color: var(--ink-soft);
+      }
+
+      .download-other {
+        margin-top: 2.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        font-size: 0.9375rem;
+        color: var(--ink-faint);
+      }
+
+      .download-other a {
+        color: var(--ink-soft);
+        text-decoration: none;
+      }
+
+      .download-other a:hover {
+        color: var(--ochre);
+      }
+
+      .download-choice[hidden] {
+        display: none;
+      }
+
+      .screen {
+        margin-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 8vw, 6rem);
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #191a1a;
+      }
+
+      .first-open {
+        border-top: 1px solid var(--rule);
+        padding-block: clamp(2.5rem, 6vw, 4rem);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(1.5rem, 5vw, 4.5rem);
+      }
+
+      .first-open p {
+        color: var(--ink-soft);
+      }
+
+      .first-open .label {
+        margin-bottom: 0.9rem;
+      }
+
+      .first-open ol {
+        margin-top: 1.1rem;
+        padding-left: 1.25rem;
+        color: var(--ink-soft);
+      }
+
+      .first-open li + li {
+        margin-top: 0.5rem;
+      }
+
+      @media (max-width: 760px) {
+        .masthead-nav {
+          display: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .first-open {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="masthead">
+      <div class="spine masthead-inner">
+        <a class="wordmark" href="../"
+          ><img src="../app-icon.png" alt="" />Emma</a
+        >
+        <nav class="masthead-nav">
+          <a href="../#price">$3.99/mo</a>
+          <a href="../#features">Included</a>
+          <a href="../#no-ai">Not Included</a>
+        </nav>
+        <a
+          class="button button-small header-cta"
+          href="https://apps.apple.com/us/app/emma-email/id6747730134"
+          target="_blank"
+          rel="noopener"
+          >Get&nbsp;Emma</a
+        >
+      </div>
+    </header>
+
+    <div class="spine">
+      <section class="download">
+        <p class="label">Email for Macs and Linux</p>
+        <h1>Same inbox.<br />Bigger desk.</h1>
+        <p class="hero-blurb">
+          Everything Emma does on your phone, with a keyboard under it.
+        </p>
+
+        <div class="download-choice" data-os="mac">
+          <a class="button" href="../download/mac">Download for Mac</a>
+          <p class="download-note">
+            Apple Silicon and Intel. Updates itself.
+          </p>
+        </div>
+
+        <div class="download-choice" data-os="linux" hidden>
+          <a class="button" href="../download/linux">Download for Linux</a>
+          <p class="download-note">
+            An AppImage that updates itself. Also as a
+            <a href="../download/linux/deb">.deb</a> or
+            <a href="../download/linux/rpm">.rpm</a>, which don't.
+          </p>
+        </div>
+
+        <div class="download-choice" data-os="other" hidden>
+          <p class="hero-blurb">Emma isn't on Windows yet.</p>
+          <p class="download-note">
+            She's on iPhone, Mac, and Linux for now.
+          </p>
+        </div>
+
+        <p class="download-other">
+          <a href="../download/mac" data-os-link="mac">Mac</a>
+          <a href="../download/linux" data-os-link="linux">Linux</a>
+          <a
+            href="https://apps.apple.com/us/app/emma-email/id6747730134"
+            target="_blank"
+            rel="noopener"
+            >iPhone</a
+          >
+        </p>
+      </section>
+
+      <div class="screen">
+        <img
+          src="desktop-inbox.webp"
+          alt="Emma on a Mac: a dark inbox with a handful of threads, a search field, and the compose and settings buttons"
+          width="1440"
+          height="600"
+        />
+      </div>
+
+      <section class="first-open" data-os-only="mac">
+        <div>
+          <p class="label">The first time you open her</p>
+          <h2 class="feature-title">Your Mac will hesitate.</h2>
+        </div>
+        <div class="measure">
+          <p>
+            Emma isn't signed with Apple yet, so the first launch gets a
+            warning that she can't be checked for malicious software. Once you
+            let her through, she opens normally from then on and updates
+            herself.
+          </p>
+          <ol>
+            <li>Open Emma once and dismiss the warning.</li>
+            <li>
+              Open System Settings, choose Privacy &amp; Security, and scroll
+              to the bottom.
+            </li>
+            <li>Next to the note about Emma, click Open Anyway.</li>
+          </ol>
+        </div>
+      </section>
+
+      <footer>
+        <p>Castle Labs</p>
+        <nav>
+          <a href="../privacy-policy.html">Privacy policy</a>
+          <a href="https://discord.gg/AJE6DrsGTe" target="_blank" rel="noopener"
+            >Discord</a
+          >
+        </nav>
+      </footer>
+    </div>
+
+    <script>
+      const platform = (navigator.userAgentData?.platform || navigator.platform || "").toLowerCase();
+      const agent = navigator.userAgent.toLowerCase();
+      const os = platform.includes("mac") || agent.includes("mac os")
+        ? "mac"
+        : platform.includes("linux") || agent.includes("linux")
+          ? "linux"
+          : "other";
+      document
+        .querySelectorAll(".download-choice")
+        .forEach((choice) => (choice.hidden = choice.dataset.os !== os));
+      document
+        .querySelectorAll("[data-os-link]")
+        .forEach((link) => (link.hidden = link.dataset.osLink === os));
+      document
+        .querySelectorAll("[data-os-only]")
+        .forEach((section) => (section.hidden = section.dataset.osOnly !== os));
+
+      const masthead = document.querySelector(".masthead");
+      const markStuck = () =>
+        masthead.classList.toggle("is-stuck", window.scrollY > 8);
+      addEventListener("scroll", markStuck, { passive: true });
+      markStuck();
+    </script>
+  </body>
+</html>

@@ -588,6 +588,47 @@
         object-fit: contain;
       }
 
+      /* ---------------- desktop ---------------- */
+
+      .desktop {
+        border-top: 1px solid var(--rule);
+        padding-block: clamp(3.25rem, 7vw, 5.5rem);
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: clamp(1.5rem, 5vw, 4.5rem);
+        align-items: center;
+      }
+
+      .desktop-head p:not(.label) {
+        color: var(--ink-soft);
+        margin-top: 1.1rem;
+      }
+
+      .desktop-head .label {
+        margin-bottom: 0.9rem;
+      }
+
+      .desktop-head .cta-row {
+        margin-top: 1.75rem;
+      }
+
+      .desktop-screen {
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #191a1a;
+      }
+
+      .cta-quiet {
+        font-size: 0.9375rem;
+        color: var(--ink-soft);
+        text-decoration: none;
+      }
+
+      .cta-quiet:hover {
+        color: var(--ochre);
+      }
+
       /* ---------------- the slab ---------------- */
 
       .slab {
@@ -751,6 +792,7 @@
         }
         .price-grid,
         .feature,
+        .desktop,
         .maker-grid {
           grid-template-columns: minmax(0, 1fr);
         }
@@ -799,6 +841,7 @@
           <a href="#price">$3.99/mo</a>
           <a href="#features">Included</a>
           <a href="#no-ai">Not Included</a>
+          <a href="#desktop">Desktop</a>
         </nav>
         <a
           class="button button-small header-cta"
@@ -813,7 +856,7 @@
     <div class="spine">
       <section class="hero" id="top">
         <div>
-          <p class="label">Email for iPhones</p>
+          <p class="label">Email for iPhones and Macs</p>
           <h1>One inbox.<br />Empty.</h1>
 
           <p class="hero-blurb">
@@ -828,6 +871,7 @@
               rel="noopener"
               >Get Emma</a
             >
+            <a class="cta-quiet" href="desktop/">Also for Mac</a>
           </div>
         </div>
         <div class="hero-emma">
@@ -1072,6 +1116,31 @@
             />
           </div>
         </article>
+      </section>
+    </div>
+
+    <div class="spine">
+      <section class="desktop reveal" id="desktop">
+        <div class="desktop-head">
+          <p class="label">Now on your desk</p>
+          <h2 class="feature-title">Same inbox. Bigger desk.</h2>
+          <p>
+            Everything Emma does on your phone, with a keyboard under it.
+            For Macs and Linux, and she keeps herself up to date.
+          </p>
+          <div class="cta-row">
+            <a class="button" href="desktop/">Get Emma for Mac</a>
+          </div>
+        </div>
+        <div class="desktop-screen">
+          <img
+            src="desktop/desktop-inbox.webp"
+            alt="Emma on a Mac: a dark inbox with a handful of threads, a search field, and the compose and settings buttons"
+            width="1440"
+            height="600"
+            loading="lazy"
+          />
+        </div>
       </section>
     </div>
 
