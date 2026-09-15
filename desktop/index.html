@@ -45,7 +45,8 @@
         font-style: italic;
         font-weight: 400 700;
         font-display: swap;
-        src: url("../fonts/instrument-sans-italic-latin-ext.woff2") format("woff2");
+        src: url("../fonts/instrument-sans-italic-latin-ext.woff2")
+          format("woff2");
         unicode-range:
           U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
           U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
@@ -69,7 +70,8 @@
         font-style: normal;
         font-weight: 400 700;
         font-display: swap;
-        src: url("../fonts/instrument-sans-normal-latin-ext.woff2") format("woff2");
+        src: url("../fonts/instrument-sans-normal-latin-ext.woff2")
+          format("woff2");
         unicode-range:
           U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
           U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
@@ -416,11 +418,27 @@
         transform: none;
       }
 
-
       /* ---------------- download ---------------- */
 
       .download {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: start;
         padding-block: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2.5rem);
+      }
+
+      .download-aside {
+        padding-top: clamp(2.25rem, 6vw, 5.5rem);
+        color: var(--ink-soft);
+      }
+
+      .download-aside .label {
+        margin-bottom: 0.9rem;
+      }
+
+      .download-aside[hidden] {
+        display: none;
       }
 
       .download h1 {
@@ -471,32 +489,6 @@
         background: #191a1a;
       }
 
-      .first-open {
-        border-top: 1px solid var(--rule);
-        padding-block: clamp(2.5rem, 6vw, 4rem);
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: clamp(1.5rem, 5vw, 4.5rem);
-      }
-
-      .first-open p {
-        color: var(--ink-soft);
-      }
-
-      .first-open .label {
-        margin-bottom: 0.9rem;
-      }
-
-      .first-open ol {
-        margin-top: 1.1rem;
-        padding-left: 1.25rem;
-        color: var(--ink-soft);
-      }
-
-      .first-open li + li {
-        margin-top: 0.5rem;
-      }
-
       @media (max-width: 760px) {
         .masthead-nav {
           display: none;
@@ -504,8 +496,11 @@
       }
 
       @media (max-width: 900px) {
-        .first-open {
+        .download {
           grid-template-columns: minmax(0, 1fr);
+        }
+        .download-aside {
+          padding-top: 0;
         }
       }
     </style>
@@ -534,45 +529,56 @@
 
     <div class="spine">
       <section class="download">
-        <p class="label">Email for Macs and Linux</p>
-        <h1>Same inbox.<br />Bigger desk.</h1>
-        <p class="hero-blurb">
-          Everything Emma does on your phone, with a keyboard under it.
-        </p>
+        <div>
+          <p class="label">Email for Macs and Linux</p>
+          <h1>Same inbox.<br />Bigger desk.</h1>
+          <p class="hero-blurb">
+            Everything Emma does on your phone, with a keyboard under it.
+          </p>
 
-        <div class="download-choice" data-os="mac">
-          <a class="button" href="../download/mac">Download for Mac</a>
-          <p class="download-note">
-            Apple Silicon and Intel. Updates itself.
+          <div class="download-choice" data-os="mac">
+            <a class="button" href="../download/mac">Download for Mac</a>
+            <p class="download-note">
+              Apple Silicon and Intel. Updates itself.
+            </p>
+          </div>
+
+          <div class="download-choice" data-os="linux" hidden>
+            <a class="button" href="../download/linux">Download for Linux</a>
+            <p class="download-note">
+              An AppImage that updates itself. Also as a
+              <a href="../download/linux/deb">.deb</a> or
+              <a href="../download/linux/rpm">.rpm</a>, which don't.
+            </p>
+          </div>
+
+          <div class="download-choice" data-os="other" hidden>
+            <p class="hero-blurb">Emma isn't on Windows yet.</p>
+            <p class="download-note">
+              She's on iPhone, Mac, and Linux for now.
+            </p>
+          </div>
+
+          <p class="download-other">
+            <a href="../download/mac" data-os-link="mac">Mac</a>
+            <a href="../download/linux" data-os-link="linux">Linux</a>
+            <a
+              href="https://apps.apple.com/us/app/emma-email/id6747730134"
+              target="_blank"
+              rel="noopener"
+              >iPhone</a
+            >
           </p>
         </div>
-
-        <div class="download-choice" data-os="linux" hidden>
-          <a class="button" href="../download/linux">Download for Linux</a>
-          <p class="download-note">
-            An AppImage that updates itself. Also as a
-            <a href="../download/linux/deb">.deb</a> or
-            <a href="../download/linux/rpm">.rpm</a>, which don't.
+        <aside class="download-aside measure" data-os-only="mac" hidden>
+          <p class="label">Before the first launch</p>
+          <p>
+            Emma isn't signed with Apple yet, so macOS blocks it the first time.
+            Open it once, then go to System Settings, Privacy &amp; Security,
+            scroll to the bottom, and click Open Anyway. After that it opens
+            like any other app and keeps itself updated.
           </p>
-        </div>
-
-        <div class="download-choice" data-os="other" hidden>
-          <p class="hero-blurb">Emma isn't on Windows yet.</p>
-          <p class="download-note">
-            She's on iPhone, Mac, and Linux for now.
-          </p>
-        </div>
-
-        <p class="download-other">
-          <a href="../download/mac" data-os-link="mac">Mac</a>
-          <a href="../download/linux" data-os-link="linux">Linux</a>
-          <a
-            href="https://apps.apple.com/us/app/emma-email/id6747730134"
-            target="_blank"
-            rel="noopener"
-            >iPhone</a
-          >
-        </p>
+        </aside>
       </section>
 
       <div class="screen">
@@ -583,29 +589,6 @@
           height="600"
         />
       </div>
-
-      <section class="first-open" data-os-only="mac">
-        <div>
-          <p class="label">The first time you open her</p>
-          <h2 class="feature-title">Your Mac will hesitate.</h2>
-        </div>
-        <div class="measure">
-          <p>
-            Emma isn't signed with Apple yet, so the first launch gets a
-            warning that she can't be checked for malicious software. Once you
-            let her through, she opens normally from then on and updates
-            herself.
-          </p>
-          <ol>
-            <li>Open Emma once and dismiss the warning.</li>
-            <li>
-              Open System Settings, choose Privacy &amp; Security, and scroll
-              to the bottom.
-            </li>
-            <li>Next to the note about Emma, click Open Anyway.</li>
-          </ol>
-        </div>
-      </section>
 
       <footer>
         <p>Castle Labs</p>
@@ -619,13 +602,18 @@
     </div>
 
     <script>
-      const platform = (navigator.userAgentData?.platform || navigator.platform || "").toLowerCase();
+      const platform = (
+        navigator.userAgentData?.platform ||
+        navigator.platform ||
+        ""
+      ).toLowerCase();
       const agent = navigator.userAgent.toLowerCase();
-      const os = platform.includes("mac") || agent.includes("mac os")
-        ? "mac"
-        : platform.includes("linux") || agent.includes("linux")
-          ? "linux"
-          : "other";
+      const os =
+        platform.includes("mac") || agent.includes("mac os")
+          ? "mac"
+          : platform.includes("linux") || agent.includes("linux")
+            ? "linux"
+            : "other";
       document
         .querySelectorAll(".download-choice")
         .forEach((choice) => (choice.hidden = choice.dataset.os !== os));
