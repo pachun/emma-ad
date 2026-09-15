@@ -1,3 +1,6 @@
+/ingest/static/*     https://us-assets.i.posthog.com/static/:splat  200
+/ingest/*            https://us.i.posthog.com/:splat  200
+
 /download/mac        https://github.com/pachun/emma-desktop-releases/releases/latest/download/Emma.dmg       302
 /download/linux      https://github.com/pachun/emma-desktop-releases/releases/latest/download/Emma.AppImage  302
 /download/linux/deb  https://github.com/pachun/emma-desktop-releases/releases/latest/download/Emma.deb       302

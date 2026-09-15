@@ -513,6 +513,7 @@
         }
       }
     </style>
+    <script src="../analytics.js" defer></script>
   </head>
 
   <body>
@@ -534,6 +535,8 @@
         <a
           class="button button-small header-cta"
           href="https://apps.apple.com/us/app/emma-email/id6747730134"
+          data-track="App Store Clicked"
+          data-track-placement="masthead"
           target="_blank"
           rel="noopener"
           >Get&nbsp;Emma</a
@@ -548,15 +551,42 @@
           <h1>Same inbox.<br />Bigger desk.</h1>
 
           <div class="download-choice" data-os="mac">
-            <a class="button" href="../download/mac">Download for Mac</a>
+            <a
+              class="button"
+              href="../download/mac"
+              data-track="Download Clicked"
+              data-track-os="mac"
+              >Download for Mac</a
+            >
             <p class="download-note">Apple Silicon and Intel.</p>
           </div>
 
           <div class="download-choice" data-os="linux" hidden>
-            <a class="button" href="../download/linux">Download for Linux</a>
+            <a
+              class="button"
+              href="../download/linux"
+              data-track="Download Clicked"
+              data-track-os="linux"
+              data-track-format="appimage"
+              >Download for Linux</a
+            >
             <p class="download-note">
-              Also as a <a href="../download/linux/deb">.deb</a> or
-              <a href="../download/linux/rpm">.rpm</a>.
+              Also as a
+              <a
+                href="../download/linux/deb"
+                data-track="Download Clicked"
+                data-track-os="linux"
+                data-track-format="deb"
+                >.deb</a
+              >
+              or
+              <a
+                href="../download/linux/rpm"
+                data-track="Download Clicked"
+                data-track-os="linux"
+                data-track-format="rpm"
+                >.rpm</a
+              >.
             </p>
           </div>
 
@@ -568,10 +598,25 @@
           </div>
 
           <p class="download-other">
-            <a href="../download/mac" data-os-link="mac">Mac</a>
-            <a href="../download/linux" data-os-link="linux">Linux</a>
+            <a
+              href="../download/mac"
+              data-os-link="mac"
+              data-track="Download Clicked"
+              data-track-os="mac"
+              >Mac</a
+            >
+            <a
+              href="../download/linux"
+              data-os-link="linux"
+              data-track="Download Clicked"
+              data-track-os="linux"
+              data-track-format="appimage"
+              >Linux</a
+            >
             <a
               href="https://apps.apple.com/us/app/emma-email/id6747730134"
+              data-track="App Store Clicked"
+              data-track-placement="download page"
               target="_blank"
               rel="noopener"
               >iPhone</a
@@ -602,7 +647,11 @@
         <p>Castle Labs</p>
         <nav>
           <a href="../privacy-policy.html">Privacy policy</a>
-          <a href="https://discord.gg/AJE6DrsGTe" target="_blank" rel="noopener"
+          <a
+            href="https://discord.gg/AJE6DrsGTe"
+            data-track="Discord Clicked"
+            target="_blank"
+            rel="noopener"
             >Discord</a
           >
         </nav>

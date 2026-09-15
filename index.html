@@ -839,6 +839,7 @@
         }
       }
     </style>
+    <script src="analytics.js" defer></script>
   </head>
   <body>
     <header class="masthead">
@@ -860,6 +861,8 @@
         <a
           class="button button-small header-cta"
           href="https://apps.apple.com/us/app/emma-email/id6747730134"
+          data-track="App Store Clicked"
+          data-track-placement="masthead"
           target="_blank"
           rel="noopener"
           >Get&nbsp;Emma</a
@@ -881,11 +884,19 @@
             <a
               class="button"
               href="https://apps.apple.com/us/app/emma-email/id6747730134"
+              data-track="App Store Clicked"
+              data-track-placement="hero"
               target="_blank"
               rel="noopener"
               >Get Emma</a
             >
-            <a class="cta-quiet" href="desktop/" data-desktop-link hidden
+            <a
+              class="cta-quiet"
+              href="desktop/"
+              data-desktop-link
+              data-track="Desktop Page Opened"
+              data-track-placement="hero"
+              hidden
               >Also for Mac</a
             >
           </div>
@@ -1142,7 +1153,12 @@
           <h2 class="feature-title">Same inbox. Bigger desk.</h2>
           <p>For Macs and Linux.</p>
           <div class="cta-row">
-            <a class="button" href="desktop/" data-desktop-button
+            <a
+              class="button"
+              href="desktop/"
+              data-desktop-button
+              data-track="Desktop Page Opened"
+              data-track-placement="section"
               >Get Emma for Mac or Linux</a
             >
           </div>
@@ -1183,6 +1199,8 @@
             <p class="badge">
               <a
                 href="https://apps.apple.com/us/app/emma-email/id6747730134"
+                data-track="App Store Clicked"
+                data-track-placement="badge"
                 target="_blank"
                 rel="noopener"
                 ><img src="app-store.svg" alt="Download on the App Store"
@@ -1196,7 +1214,11 @@
         <p>Castle Labs</p>
         <nav>
           <a href="privacy-policy.html">Privacy policy</a>
-          <a href="https://discord.gg/AJE6DrsGTe" target="_blank" rel="noopener"
+          <a
+            href="https://discord.gg/AJE6DrsGTe"
+            data-track="Discord Clicked"
+            target="_blank"
+            rel="noopener"
             >Discord</a
           >
         </nav>
