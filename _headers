@@ -9,3 +9,7 @@
 
 /*.jpg
   Cache-Control: public, max-age=604800
+
+/install.sh
+  Cache-Control: public, max-age=300
+  Content-Type: text/x-shellscript; charset=utf-8

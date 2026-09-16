@@ -507,6 +507,20 @@
         gap: 0.75rem;
       }
 
+      .download-command {
+        margin: 0.9rem 0 0;
+        padding: 0.7rem 1rem;
+        max-width: max-content;
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        background: var(--paper-sunk);
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.875rem;
+        color: var(--ink);
+        overflow-x: auto;
+        user-select: all;
+      }
+
       .screen {
         margin-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 8vw, 6rem);
         border: 1px solid var(--rule);
@@ -603,9 +617,12 @@
               >
             </div>
             <p class="download-note">
-              A .deb, an .rpm, or an AppImage. The AppImage runs anywhere once
-              it's marked executable.
+              A .deb, an .rpm, or an AppImage that runs anywhere: extract it and
+              double-click it. Or, from a terminal:
             </p>
+            <pre
+              class="download-command"
+            ><code>curl -fsSL https://emmaemail.app/install.sh | sh</code></pre>
           </div>
 
           <div class="download-choice" data-os="other" hidden>
