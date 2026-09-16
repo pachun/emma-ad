@@ -437,19 +437,6 @@
         padding-block: clamp(2.5rem, 7vw, 6rem) clamp(1.25rem, 3vw, 2.5rem);
       }
 
-      .download-aside {
-        padding-top: clamp(2.25rem, 6vw, 5.5rem);
-        color: var(--ink-soft);
-      }
-
-      .download-aside .label {
-        margin-bottom: 0.9rem;
-      }
-
-      .download-aside[hidden] {
-        display: none;
-      }
-
       .download h1 {
         margin-top: 1.25rem;
       }
@@ -507,9 +494,6 @@
       @media (max-width: 900px) {
         .download {
           grid-template-columns: minmax(0, 1fr);
-        }
-        .download-aside {
-          padding-top: 0;
         }
       }
     </style>
@@ -623,15 +607,6 @@
             >
           </p>
         </div>
-        <aside class="download-aside measure" data-os-only="mac" hidden>
-          <p class="label">Before the first launch</p>
-          <p>
-            Emma isn't signed with Apple yet, so macOS blocks it the first time.
-            Open it once, then go to System Settings, Privacy &amp; Security,
-            scroll to the bottom, and click Open Anyway. After that it opens
-            like any other app.
-          </p>
-        </aside>
       </section>
 
       <div class="screen">
@@ -679,9 +654,6 @@
       document
         .querySelectorAll("[data-os-link]")
         .forEach((link) => (link.hidden = link.dataset.osLink === os));
-      document
-        .querySelectorAll("[data-os-only]")
-        .forEach((section) => (section.hidden = section.dataset.osOnly !== os));
 
       const masthead = document.querySelector(".masthead");
       const markStuck = () =>
