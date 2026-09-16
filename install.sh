@@ -42,7 +42,7 @@ Icon=emma
 Terminal=false
 Categories=Network;Email;
 MimeType=x-scheme-handler/emma;
-StartupWMClass=emma-desktop
+StartupWMClass=Emma-desktop
 DESKTOP
   update-desktop-database "$menu_dir" 2>/dev/null || true
   xdg-mime default emma.desktop x-scheme-handler/emma 2>/dev/null || true
