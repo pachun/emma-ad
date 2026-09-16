@@ -509,16 +509,40 @@
 
       .download-command {
         margin: 0.9rem 0 0;
-        padding: 0.7rem 1rem;
-        max-width: max-content;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        max-width: 100%;
+        padding: 0.45rem 0.45rem 0.45rem 1rem;
         border: 1px solid var(--rule);
         border-radius: 8px;
         background: var(--paper-sunk);
+      }
+
+      .download-command pre {
+        margin: 0;
         font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
         font-size: 0.875rem;
         color: var(--ink);
         overflow-x: auto;
         user-select: all;
+      }
+
+      .copy-command {
+        flex: none;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        background: var(--paper);
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .copy-command:hover {
+        color: var(--ochre);
       }
 
       .screen {
@@ -620,9 +644,16 @@
               A .deb, an .rpm, or an AppImage that runs anywhere: extract it and
               double-click it. Or, from a terminal:
             </p>
-            <pre
-              class="download-command"
-            ><code>curl -fsSL https://emmaemail.app/install.sh | sh</code></pre>
+            <div class="download-command">
+              <pre><code>curl -fsSL https://emmaemail.app/install.sh | sh</code></pre>
+              <button
+                type="button"
+                class="copy-command"
+                data-copies="curl -fsSL https://emmaemail.app/install.sh | sh"
+              >
+                Copy
+              </button>
+            </div>
           </div>
 
           <div class="download-choice" data-os="other" hidden>
@@ -705,6 +736,18 @@
       document
         .querySelectorAll("[data-os-link]")
         .forEach((link) => (link.hidden = link.dataset.osLink === os));
+
+      document.querySelectorAll(".copy-command").forEach((button) => {
+        button.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copies);
+            button.textContent = "Copied";
+            setTimeout(() => (button.textContent = "Copy"), 1500);
+          } catch {
+            button.textContent = "Select it and copy";
+          }
+        });
+      });
 
       const masthead = document.querySelector(".masthead");
       const markStuck = () =>
