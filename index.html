@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Emma — One inbox. Empty.</title>
+    <title>Emma Email — A simpler email app for iPhone and Mac</title>
     <meta
       name="description"
-      content="Email for iPhones. One week free. Then $3.99/mo."
+      content="Emma is a simple email app for iPhone, Mac, and Linux that works with Gmail and Outlook. One-tap unsubscribe, read receipts, set aside for later, and no AI. One week free, then $3.99 a month."
     />
     <meta property="og:title" content="Emma — One inbox. Empty." />
     <meta
       property="og:description"
-      content="Email for iPhones. One week free. Then $3.99/mo."
+      content="A simple email app for iPhone, Mac, and Linux. One-tap unsubscribe, read receipts, set aside for later, and no AI. One week free, then $3.99 a month."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
@@ -26,6 +26,48 @@
     />
     <meta name="twitter:image" content="https://emmaemail.app/og-image.jpg" />
     <link rel="canonical" href="https://emmaemail.app/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://emmaemail.app/#castle-labs",
+            "name": "Castle Labs",
+            "url": "https://emmaemail.app/",
+            "logo": "https://emmaemail.app/app-icon-light.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://emmaemail.app/#site",
+            "url": "https://emmaemail.app/",
+            "name": "Emma Email",
+            "publisher": { "@id": "https://emmaemail.app/#castle-labs" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://emmaemail.app/#app",
+            "name": "Emma",
+            "alternateName": "Emma Email",
+            "description": "A simple email app for Gmail and Outlook with one-tap unsubscribe, read receipts, set aside for later, and no AI.",
+            "url": "https://emmaemail.app/",
+            "image": "https://emmaemail.app/og-image.jpg",
+            "applicationCategory": "CommunicationApplication",
+            "operatingSystem": "iOS, macOS, Linux",
+            "installUrl": "https://apps.apple.com/us/app/emma-email/id6747730134",
+            "downloadUrl": "https://emmaemail.app/desktop/",
+            "author": { "@id": "https://emmaemail.app/#castle-labs" },
+            "offers": {
+              "@type": "Offer",
+              "price": "3.99",
+              "priceCurrency": "USD",
+              "category": "subscription",
+              "description": "One week free, then $3.99 a month."
+            }
+          }
+        ]
+      }
+    </script>
     <link
       rel="icon"
       href="app-icon-light.png"
@@ -904,6 +946,9 @@
         <div class="hero-emma">
           <img
             src="emma-hero.webp"
+            width="900"
+            height="1244"
+            fetchpriority="high"
             alt="Emma, illustrated in a mid-century advertising style, leaning on an open and empty curbside mailbox"
           />
         </div>

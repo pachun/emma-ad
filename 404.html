@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Not here — Emma Email</title>
+    <meta name="robots" content="noindex" />
+    <link
+      rel="icon"
+      href="/app-icon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/app-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --paper: light-dark(#fdfdfc, #0e0e0d);
+        --ink: light-dark(#121211, #eeebe3);
+        --ink-soft: light-dark(#5f5d57, #a3a099);
+        --ochre: light-dark(#9a6b16, #d6a44e);
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          "Instrument Sans",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          sans-serif;
+        text-align: center;
+        padding: 1.5rem;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        letter-spacing: -0.028em;
+        line-height: 1.03;
+        margin: 0 0 1rem;
+      }
+      p {
+        color: var(--ink-soft);
+        margin: 0 0 1.5rem;
+      }
+      a {
+        color: var(--ink);
+        text-decoration-color: var(--ochre);
+        text-underline-offset: 0.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Nothing here.<br />Which is the idea.</h1>
+      <p>That page doesn't exist.</p>
+      <a href="/">Back to Emma</a>
+    </main>
+  </body>
+</html>
