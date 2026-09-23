@@ -96,13 +96,6 @@
       type="font/woff2"
       crossorigin
     />
-    <link
-      rel="preload"
-      href="fonts/instrument-serif-normal-latin.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <noscript>
       <style>
         .reveal {
@@ -164,56 +157,6 @@
           U+2212, U+2215, U+FEFF, U+FFFD;
       }
 
-      @font-face {
-        font-family: "Instrument Serif";
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: url("fonts/instrument-serif-italic-latin-ext.woff2")
-          format("woff2");
-        unicode-range:
-          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
-          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-
-      @font-face {
-        font-family: "Instrument Serif";
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: url("fonts/instrument-serif-italic-latin.woff2") format("woff2");
-        unicode-range:
-          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-
-      @font-face {
-        font-family: "Instrument Serif";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("fonts/instrument-serif-normal-latin-ext.woff2")
-          format("woff2");
-        unicode-range:
-          U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
-          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-      }
-
-      @font-face {
-        font-family: "Instrument Serif";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("fonts/instrument-serif-normal-latin.woff2") format("woff2");
-        unicode-range:
-          U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
-          U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-
       :root {
         color-scheme: light dark;
 
@@ -231,7 +174,6 @@
         --sans:
           "Instrument Sans", ui-sans-serif, system-ui, -apple-system,
           "Helvetica Neue", sans-serif;
-        --serif: "Instrument Serif", ui-serif, Georgia, serif;
 
         --gutter: clamp(1.25rem, 5vw, 3rem);
         --measure: 34rem;
@@ -590,7 +532,7 @@
         margin-bottom: 0.9rem;
       }
       .feature-body em {
-        font-family: var(--serif);
+        font-family: var(--sans);
         font-style: italic;
         font-size: 1.1em;
         color: var(--ink);
@@ -602,7 +544,7 @@
       }
 
       .quote blockquote p {
-        font-family: var(--serif);
+        font-family: var(--sans);
         font-size: 1.125rem;
         line-height: 1.45;
         color: var(--ink-soft);
@@ -753,7 +695,7 @@
 
       .maker-body .thanks {
         margin-top: 1.75rem;
-        font-family: var(--serif);
+        font-family: var(--sans);
         font-size: clamp(1.35rem, 2.2vw, 1.7rem);
         line-height: 1.3;
         color: var(--ochre);
@@ -883,6 +825,8 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="reviews.css" />
+    <script src="reviews.js" defer></script>
     <script src="analytics.js" defer></script>
   </head>
   <body>
@@ -1234,6 +1178,29 @@
         <p>You can get your AI fix just about anywhere else.</p>
       </div>
     </section>
+
+    <div class="spine" id="app-store-reviews">
+<section class="reader-reviews" aria-labelledby="reader-reviews-title">
+    <div class="reviews-heading"><div><h2 id="reader-reviews-title">App Store Reviews</h2></div><div class="review-navigation" hidden><button type="button" data-review-direction="-1" aria-label="Previous testimonial" aria-controls="selected-reviews">←</button><button type="button" data-review-direction="1" aria-label="Next testimonial" aria-controls="selected-reviews">→</button></div></div>
+    <div class="selected-reviews" id="selected-reviews" tabindex="0" role="region" aria-label="Selected testimonials"><figure class="reader-review reader-review-featured">
+    <p class="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></p>
+    <blockquote><p>Emma is perfect for those users who just want email in their inbox and nothing else to clutter everything up.
+It’s fast too.
+The developer is still working to finish the project—but it still works perfectly.</p></blockquote>
+    <figcaption><span class="review-author">Two Riders</span><span>Australia · <time datetime="2026-09-17T18:52:53-07:00">Sep 17, 2026</time></span><a href="https://apps.apple.com/au/app/emma-email/id6747730134?see-all=reviews" target="_blank" rel="noopener">App Store review<span class="review-sr-only">: Fast and clean</span></a></figcaption>
+  </figure>
+<figure class="reader-review reader-review-featured">
+    <p class="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></p>
+    <blockquote><p>Nowadays every email client is AI this and AI that with a  million bells and whistles Emma Email is such a nice breath of fresh air. It does one thing and does it simply and effectively.</p></blockquote>
+    <figcaption><span class="review-author">Donkey Ranch</span><span>United States · <time datetime="2025-11-13T03:02:52-08:00">Nov 13, 2025</time></span><a href="https://apps.apple.com/us/app/emma-email/id6747730134?see-all=reviews" target="_blank" rel="noopener">App Store review<span class="review-sr-only">: Love the simplicity</span></a></figcaption>
+  </figure>
+<figure class="reader-review reader-review-featured">
+    <p class="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></p>
+    <blockquote><p>Emma quickly became my default mail app. Fast, lightweight, and focused on the core email experience I need.</p></blockquote>
+    <figcaption><span class="review-author">@Murdo_</span><span>Canada · <time datetime="2025-10-23T08:55:07-07:00">Oct 23, 2025</time></span><a href="https://apps.apple.com/ca/app/emma-email/id6747730134?see-all=reviews" target="_blank" rel="noopener">App Store review<span class="review-sr-only">: Mail, simplified</span></a></figcaption>
+  </figure></div>
+  </section>
+</div><!-- end-app-store-reviews -->
 
     <div class="spine">
       <section class="maker reveal">

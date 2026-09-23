@@ -1,0 +1,35 @@
+name: Refresh App Store reviews
+on:
+  schedule:
+    - cron: '23 10 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: refresh-app-store-reviews
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh worldwide reviews
+        run: node scripts/refresh-reviews.mjs
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY_PEM: ${{ secrets.ASC_PRIVATE_KEY_PEM }}
+      - name: Publish refreshed content
+        run: |
+          git config user.name 'Emma reviews'
+          git config user.email 'reviews@emmaemail.app'
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh worldwide App Store reviews'
+            git push origin HEAD:main
+          fi
