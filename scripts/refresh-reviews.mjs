@@ -7,6 +7,7 @@ const appId = '6747730134';
 const territories = JSON.parse(await readFile(new URL('review-territories.json', import.meta.url), 'utf8'));
 const featuredIds = ['00000192-3230-d603-63ff-092400000000', '00000192-3230-d603-1e3c-a8b000000000', '00000192-3230-d603-18fe-815500000000'];
 const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+const bodyMarkup = body => body.split(/\r?\n/).map(line => escape(line.trimEnd())).join('<br>');
 const encode = value => Buffer.from(JSON.stringify(value)).toString('base64url');
 const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
 const dateFormat = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
@@ -34,7 +35,7 @@ const reviewMarkup = (review, featured = false) => {
   const sourceUrl = `https://apps.apple.com/${country?.toLowerCase() || 'us'}/app/emma-email/id${appId}?see-all=reviews`;
   return `<figure class="reader-review${featured ? ' reader-review-featured' : ''}">
     <p class="review-stars" aria-label="${review.rating} out of 5 stars"><span aria-hidden="true">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</span></p>
-    <blockquote><p>${escape(review.body.replace(/[ \t]+(?=\n)/g, ""))}</p></blockquote>
+    <blockquote><p>${bodyMarkup(review.body)}</p></blockquote>
     <figcaption><span class="review-author">${escape(review.reviewerNickname)}</span><span>${escape(countryName)} · <time datetime="${escape(review.createdDate)}">${dateFormat.format(new Date(review.createdDate.slice(0, 10)))}</time></span><a href="${escape(sourceUrl)}" target="_blank" rel="noopener">App Store review<span class="review-sr-only">: ${escape(review.title)}</span></a></figcaption>
   </figure>`;
 };
